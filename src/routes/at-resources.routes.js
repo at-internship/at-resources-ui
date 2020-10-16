@@ -15,16 +15,22 @@ const { dashboard,
 
 // ============= Sub Routes =============
 
+// AT-RESOURCES - renderDashboard
 router.get('/', renderDashboard);
 
+// AT-RESOURCES - renderDashboard
 router.get("/dashboard", renderDashboard);
 
+// AT-RESOURCES - renderAddTaskForm
 router.get("/task/add", renderAddTaskForm);
 
+// AT-RESOURCES - addTask
 router.post("/task/add", addTask);
 
+// AT-RESOURCES - renderEditTaskForm
 router.get("/task/edit/:id", renderEditTaskForm);
 
+// AT-RESOURCES - updateTask
 router.put("/task/edit/:id", updateTask);
 
 module.exports = router;

@@ -65,4 +65,12 @@ rscCtrl.updateSprint = (req, res) =>{
     res.render("/sprint/edit/:id");
     };   
 
+
+
+//-----------Mentors-----------//    
+// Render Mentor List
+rscCtrl.renderMentorList = (req, res) => {
+    res.render("mentors");
+};
+
 module.exports = rscCtrl;

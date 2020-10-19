@@ -3,7 +3,7 @@ const router = express.Router();
 const path = require('path');
 
 // Admin Controller
-const { dashboard } = require("../controllers/at-resources.controller");
+const { dashboard, renderBacklog, } = require("../controllers/at-resources.controller");
 
 // Helpers
 // const { isAdmin } = require("../helpers/auth");
@@ -15,5 +15,8 @@ router.get('/', dashboard);
 
 // AT-RESOURCES - Dashboard
 router.get("/dashboard", dashboard);
+
+// AT-RESOURCES - Backlog
+router.get("/backlog", renderBacklog);
 
 module.exports = router;

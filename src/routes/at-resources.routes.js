@@ -3,18 +3,61 @@ const router = express.Router();
 const path = require('path');
 
 // Admin Controller
-const { dashboard, renderBacklog, } = require("../controllers/at-resources.controller");
+const { dashboard,
+        renderDashboard,
+        renderAddTaskForm,
+        addTask,
+        renderEditTaskForm,
+        updateTask,
+        renderSprint, 
+        renderAddSprintForm,
+        addSprint,
+        renderEditSprintForm,
+        updateSprint,
+        renderBacklog,} = require("../controllers/at-resources.controller");
 
 // Helpers
 // const { isAdmin } = require("../helpers/auth");
 
 // ============= Sub Routes =============
 
-// AT-RESOURCES - Index
-router.get('/', dashboard);
+// AT-RESOURCES - renderDashboard
+router.get('/', renderDashboard);
 
-// AT-RESOURCES - Dashboard
-router.get("/dashboard", dashboard);
+// AT-RESOURCES - renderDashboard
+router.get("/dashboard", renderDashboard);
+
+// AT-RESOURCES - renderAddTaskForm
+router.get("/task/add", renderAddTaskForm);
+
+// AT-RESOURCES - addTask
+router.post("/task/add", addTask);
+
+// AT-RESOURCES - renderEditTaskForm
+router.get("/task/edit/:id", renderEditTaskForm);
+
+// AT-RESOURCES - updateTask
+router.put("/task/edit/:id", updateTask);
+
+
+//-----------Sprint-----------//
+
+
+// Render Sprint
+router.get("/sprint", renderSprint);
+
+//Render AddSprint
+router.get("/sprint/add", renderAddSprintForm)
+
+// AddSprint
+router.post("/sprint/add", addSprint);
+
+// Render editSprint
+router.get("/sprint/edit/:id", renderEditSprintForm);
+
+ // Update sprint
+ router.put("/sprint/edit/:id", updateSprint);
+
 
 // AT-RESOURCES - Backlog
 router.get("/backlog", renderBacklog);

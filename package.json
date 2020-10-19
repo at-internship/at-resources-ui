@@ -34,7 +34,7 @@
         "dotenv": "^8.2.0",
         "handlebars": "^4.7.6",
         "nodemon": "^2.0.4",
-        "npm-check-updates": "^9.0.4"
+        "npm-check-updates": "^9.1.0"
     },
     "engines": {
         "node": "10.x"

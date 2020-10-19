@@ -14,7 +14,7 @@ const { dashboard,
         addSprint,
         renderEditSprintForm,
         updateSprint,
-        renderMentorList,} = require("../controllers/at-resources.controller");
+        renderMentorList } = require("../controllers/at-resources.controller");
 
 // Helpers
 // const { isAdmin } = require("../helpers/auth");

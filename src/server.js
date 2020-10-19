@@ -48,8 +48,9 @@ app.use((req, res, next) => {
 
 // Global variables
 
-// AT-RESOURCES Routes - General
+// AT-RESOURCES Routes - General 
 app.use("/", require("./routes/at-resources.routes"));
+
 
 // AT-RESOURCES Routes - Admin
 app.use("/admin", require("./routes/admin.routes"));

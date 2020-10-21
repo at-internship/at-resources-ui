@@ -1,31 +1,35 @@
 const express = require("express");
 const router = express.Router();
-const path = require('path');
+const path = require("path");
 
-// Admin Controller
-const { dashboard,
-        renderDashboard,
-        renderAddTaskForm,
-        addTask,
-        renderEditTaskForm,
-        updateTask,
-        renderSprint, 
-        renderAddSprintForm,
-        addSprint,
-        renderEditSprintForm,
-        updateSprint, 
-        renderTeamList} = require("../controllers/at-resources.controller");
+// AT-RESOURCES - Controller
+const {
+    dashboard,
+    renderAddTaskForm,
+    addTask,
+    renderEditTaskForm,
+    updateTask,
+    sprint,
+    renderAddSprintForm,
+    addSprint,
+    renderEditSprintForm,
+    updateSprint,
+    backlog,
+    mentors,
+    metrics,
+    renderTeamList} = require("../controllers/at-resources.controller");
 
 // Helpers
 // const { isAdmin } = require("../helpers/auth");
 
+
 // ============= Sub Routes =============
 
-// AT-RESOURCES - renderDashboard
-router.get('/', renderDashboard);
+// AT-RESOURCES - Dashboard
+router.get("/", dashboard);
 
-// AT-RESOURCES - renderDashboard
-router.get("/dashboard", renderDashboard);
+// AT-RESOURCES - Dashboard
+router.get("/dashboard", dashboard);
 
 // AT-RESOURCES - renderAddTaskForm
 router.get("/task/add", renderAddTaskForm);
@@ -43,22 +47,39 @@ router.put("/task/edit/:id", updateTask);
 router.get("/teams", renderTeamList);
 
 
-//-----------Sprint-----------//
+//-----------SPRINT-----------//
 
+// AT-RESOURCES - Render Sprint
+router.get("/sprint", sprint);
 
-// Render Sprint
-router.get("/sprint", renderSprint);
+// AT-RESOURCES - Render AddSprint
+router.get("/sprint/add", renderAddSprintForm);
 
-//Render AddSprint
-router.get("/sprint/add", renderAddSprintForm)
-
-// AddSprint
+// AT-RESOURCES - AddSprint
 router.post("/sprint/add", addSprint);
 
-// Render editSprint
+// AT-RESOURCES - Render editSprint
 router.get("/sprint/edit/:id", renderEditSprintForm);
 
- // Update sprint
- router.put("/sprint/edit/:id", updateSprint);
+// AT-RESOURCES - Update sprint
+router.put("/sprint/edit/:id", updateSprint);
+
+
+//---------METRICS----------//
+
+// AT-RESOURCES - Render Metrics
+router.get("/metrics", metrics); //-- Graphics
+
+
+//-----------BACKLOG-----------//
+
+// AT-RESOURCES - Render Backlog
+router.get("/backlog", backlog);
+
+
+//-----------MENTORS-----------//
+
+// AT-RESOURCES - Render Mentors
+router.get("/mentors", mentors);
 
 module.exports = router;

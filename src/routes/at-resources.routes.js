@@ -14,6 +14,7 @@ const { dashboard,
         addSprint,
         renderEditSprintForm,
         updateSprint,
+        renderMentorList,
         renderMetrics} = require("../controllers/at-resources.controller");
 
 // Helpers
@@ -62,5 +63,9 @@ router.get("/sprint/edit/:id", renderEditSprintForm);
 
  router.get("/metrics", renderMetrics); //-- Graphics
 
+
+ //-----------Mentors-----------//    
+// Render Mentor List
+router.get("/mentors",renderMentorList);
 
 module.exports = router;

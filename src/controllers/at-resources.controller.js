@@ -33,8 +33,12 @@ rscCtrl.updateTask = async(req, res) => {
 };
 
 
+//-----------METRICS------------
 
-
+rscCtrl.renderMetrics = async(req, res) => {
+    //console.log("--> rscCtrl.renderMetrics");
+    res.render("metrics");
+};
 
 //-----------Sprint-----------//
 

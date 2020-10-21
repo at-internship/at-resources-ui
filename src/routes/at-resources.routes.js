@@ -13,7 +13,8 @@ const { dashboard,
         renderAddSprintForm,
         addSprint,
         renderEditSprintForm,
-        updateSprint} = require("../controllers/at-resources.controller");
+        updateSprint,
+        renderMetrics} = require("../controllers/at-resources.controller");
 
 // Helpers
 // const { isAdmin } = require("../helpers/auth");
@@ -56,6 +57,10 @@ router.get("/sprint/edit/:id", renderEditSprintForm);
 
  // Update sprint
  router.put("/sprint/edit/:id", updateSprint);
+
+ //---------METRICS----------//
+
+ router.get("/metrics", renderMetrics); //-- Graphics
 
 
 module.exports = router;

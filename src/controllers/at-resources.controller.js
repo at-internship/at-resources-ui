@@ -40,7 +40,7 @@ rscCtrl.renderMetrics = async(req, res) => {
     res.render("metrics");
 };
 
-//-----------Sprint-----------//
+//-----------SPRINT-----------//
 
 // Render Sprint
 rscCtrl.renderSprint = (req, res) => {
@@ -70,10 +70,16 @@ rscCtrl.updateSprint = (req, res) =>{
     };   
 
 
-// AT-RESOURCES - Index/Backlog
+//-----------BACKLOG-----------//
+// Render Backlog
 rscCtrl.renderBacklog = async(req, res) => {
     console.log("--> rscCtrl.renderBacklog");
     res.render("backlog");
+
+//-----------MENTORS-----------//    
+// Render Mentor List
+rscCtrl.renderMentorList = (req, res) => {
+    res.render("mentors");
 };
 
 module.exports = rscCtrl;

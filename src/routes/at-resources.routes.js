@@ -15,6 +15,7 @@ const { dashboard,
         renderEditSprintForm,
         updateSprint,
         renderBacklog,
+        renderMentorList,
         renderMetrics} = require("../controllers/at-resources.controller");
 
 // Helpers
@@ -40,9 +41,7 @@ router.get("/task/edit/:id", renderEditTaskForm);
 // AT-RESOURCES - updateTask
 router.put("/task/edit/:id", updateTask);
 
-
-//-----------Sprint-----------//
-
+//-----------SPRINT-----------//
 
 // Render Sprint
 router.get("/sprint", renderSprint);
@@ -63,8 +62,12 @@ router.get("/sprint/edit/:id", renderEditSprintForm);
 
  router.get("/metrics", renderMetrics); //-- Graphics
 
-
-// AT-RESOURCES - Backlog
+//-----------BACKLOG-----------//   
+// Render Backlog
 router.get("/backlog", renderBacklog);
+
+//-----------MENTORS-----------//    
+// Render Mentor List
+router.get("/mentors",renderMentorList);
 
 module.exports = router;

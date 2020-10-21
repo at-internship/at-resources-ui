@@ -46,13 +46,11 @@ app.use((req, res, next) => {
   next();
 });
 
-// routes
-
-app.use("/members", require("./routes/
-members.routes"));
-
 // Global variables
 
+// Routes
+
+app.use("/members", require("./routes/members.routes");)
 
 // AT-RESOURCES Routes - General
 app.use("/", require("./routes/at-resources.routes"));

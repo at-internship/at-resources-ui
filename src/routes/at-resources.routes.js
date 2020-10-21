@@ -38,6 +38,20 @@ router.get("/task/edit/:id", renderEditTaskForm);
 // AT-RESOURCES - updateTask
 router.put("/task/edit/:id", updateTask);
 
+const router = require("express"),
+Router;
+
+//Controller
+
+const { renderMembersList } = require
+('../controllers/members.controller')
+
+// Gets
+
+router.get("/members", renderMembersList);
+
+module.exports = router;
+
 
 //-----------Sprint-----------//
 

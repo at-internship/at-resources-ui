@@ -43,10 +43,6 @@ router.get("/task/edit/:id", renderEditTaskForm);
 // AT-RESOURCES - updateTask
 router.put("/task/edit/:id", updateTask);
 
-// AT-RESOURCES - TEAMS
-router.get("/teams", renderTeamList);
-
-
 //-----------SPRINT-----------//
 
 // AT-RESOURCES - Render Sprint
@@ -81,5 +77,10 @@ router.get("/backlog", backlog);
 
 // AT-RESOURCES - Render Mentors
 router.get("/mentors", mentors);
+
+//-----------TEAMS-----------//
+
+// AT-RESOURCES - TEAMS
+router.get("/teams", renderTeamList);
 
 module.exports = router;

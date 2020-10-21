@@ -75,6 +75,7 @@ rscCtrl.updateSprint = (req, res) =>{
 rscCtrl.renderBacklog = async(req, res) => {
     console.log("--> rscCtrl.renderBacklog");
     res.render("backlog");
+};
 
 //-----------MENTORS-----------//    
 // Render Mentor List

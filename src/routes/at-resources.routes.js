@@ -13,7 +13,8 @@ const { dashboard,
         renderAddSprintForm,
         addSprint,
         renderEditSprintForm,
-        updateSprint} = require("../controllers/at-resources.controller");
+        updateSprint, 
+        renderTeamList} = require("../controllers/at-resources.controller");
 
 // Helpers
 // const { isAdmin } = require("../helpers/auth");
@@ -38,6 +39,9 @@ router.get("/task/edit/:id", renderEditTaskForm);
 // AT-RESOURCES - updateTask
 router.put("/task/edit/:id", updateTask);
 
+// AT-RESOURCES - TEAMS
+router.get("/teams", renderTeamList);
+
 
 //-----------Sprint-----------//
 
@@ -56,6 +60,5 @@ router.get("/sprint/edit/:id", renderEditSprintForm);
 
  // Update sprint
  router.put("/sprint/edit/:id", updateSprint);
-
 
 module.exports = router;

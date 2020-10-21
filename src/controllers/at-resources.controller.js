@@ -32,9 +32,11 @@ rscCtrl.updateTask = async(req, res) => {
 
 };
 
-
-
-
+// AT-RESOURCES - TEAMS
+rscCtrl.renderTeamList = async(req, res) => {
+    console.log("--> rscCtrl.renderTeamList");
+    res.render("teams/team-list");
+};
 
 //-----------Sprint-----------//
 

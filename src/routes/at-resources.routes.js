@@ -14,7 +14,8 @@ const { dashboard,
         addSprint,
         renderEditSprintForm,
         updateSprint,
-        renderBacklog,} = require("../controllers/at-resources.controller");
+        renderBacklog,
+        renderMetrics} = require("../controllers/at-resources.controller");
 
 // Helpers
 // const { isAdmin } = require("../helpers/auth");
@@ -57,6 +58,10 @@ router.get("/sprint/edit/:id", renderEditSprintForm);
 
  // Update sprint
  router.put("/sprint/edit/:id", updateSprint);
+
+ //---------METRICS----------//
+
+ router.get("/metrics", renderMetrics); //-- Graphics
 
 
 // AT-RESOURCES - Backlog

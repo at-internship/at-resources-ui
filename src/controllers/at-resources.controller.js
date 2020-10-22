@@ -29,13 +29,11 @@ rscCtrl.updateTask = async (req, res) => {
   console.log("--> rscCtrl.updateTask");
 };
 
-const membersCtrl = {};
-membersCtrl.renderMemberslist = (req, res) => {
+//-----------Sprint-----------//
+
+rscCtrl.renderMemberslist = (req, res) => {
   res.render("members/membersList");
 };
-module.exports = membersCtrl;
-
-//-----------Sprint-----------//
 
 // Render Sprint
 rscCtrl.renderSprint = (req, res) => {

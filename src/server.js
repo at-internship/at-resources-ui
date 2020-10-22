@@ -50,7 +50,7 @@ app.use((req, res, next) => {
 
 // Routes
 
-app.use("/members", require("./routes/members.routes");)
+app.use("/members", require("./routes/members.routes"));
 
 // AT-RESOURCES Routes - General
 app.use("/", require("./routes/at-resources.routes"));

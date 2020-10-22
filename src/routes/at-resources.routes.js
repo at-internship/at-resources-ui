@@ -1,19 +1,22 @@
 const express = require("express");
 const router = express.Router();
-const path = require('path');
+const path = require("path");
 
 // Admin Controller
-const { dashboard,
-        renderDashboard,
-        renderAddTaskForm,
-        addTask,
-        renderEditTaskForm,
-        updateTask,
-        renderSprint, 
-        renderAddSprintForm,
-        addSprint,
-        renderEditSprintForm,
-        updateSprint} = require("../controllers/at-resources.controller");
+const {
+  dashboard,
+  renderDashboard,
+  renderAddTaskForm,
+  addTask,
+  renderEditTaskForm,
+  updateTask,
+  renderSprint,
+  renderAddSprintForm,
+  addSprint,
+  renderEditSprintForm,
+  updateSprint,
+  renderMemberslist,
+} = require("../controllers/at-resources.controller");
 
 // Helpers
 // const { isAdmin } = require("../helpers/auth");
@@ -21,7 +24,7 @@ const { dashboard,
 // ============= Sub Routes =============
 
 // AT-RESOURCES - renderDashboard
-router.get('/', renderDashboard);
+router.get("/", renderDashboard);
 
 // AT-RESOURCES - renderDashboard
 router.get("/dashboard", renderDashboard);
@@ -38,29 +41,16 @@ router.get("/task/edit/:id", renderEditTaskForm);
 // AT-RESOURCES - updateTask
 router.put("/task/edit/:id", updateTask);
 
-const router = require("express"),
-Router;
-
-//Controller
-
-const { renderMembersList } = require
-('../controllers/members.controller')
-
 // Gets
-
-router.get("/members", renderMembersList);
-
-module.exports = router;
-
+router.get("/members", renderMemberList);
 
 //-----------Sprint-----------//
-
 
 // Render Sprint
 router.get("/sprint", renderSprint);
 
 //Render AddSprint
-router.get("/sprint/add", renderAddSprintForm)
+router.get("/sprint/add", renderAddSprintForm);
 
 // AddSprint
 router.post("/sprint/add", addSprint);
@@ -68,8 +58,7 @@ router.post("/sprint/add", addSprint);
 // Render editSprint
 router.get("/sprint/edit/:id", renderEditSprintForm);
 
- // Update sprint
- router.put("/sprint/edit/:id", updateSprint);
-
+// Update sprint
+router.put("/sprint/edit/:id", updateSprint);
 
 module.exports = router;

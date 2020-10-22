@@ -15,7 +15,7 @@ const {
   addSprint,
   renderEditSprintForm,
   updateSprint,
-  renderMemberslist,
+  renderMembersList,
 } = require("../controllers/at-resources.controller");
 
 // Helpers
@@ -41,8 +41,8 @@ router.get("/task/edit/:id", renderEditTaskForm);
 // AT-RESOURCES - updateTask
 router.put("/task/edit/:id", updateTask);
 
-// Gets
-router.get("/members", renderMemberList);
+// AT-RESOURCES - MEMBERS
+router.get("/members", renderMembersList);
 
 //-----------Sprint-----------//
 

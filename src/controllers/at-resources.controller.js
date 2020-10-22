@@ -31,8 +31,8 @@ rscCtrl.updateTask = async (req, res) => {
 
 //-----------Sprint-----------//
 
-rscCtrl.renderMemberslist = (req, res) => {
-  res.render("members/membersList");
+rscCtrl.renderMembersList = (req, res) => {
+  res.render("members");
 };
 
 // Render Sprint

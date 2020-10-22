@@ -1,10 +1,11 @@
 const rscCtrl = {};
 
 // AT-RESOURCES - Index/Dashboard
-rscCtrl.renderDashboard = async (req, res) => {
+rscCtrl.dashboard = async (req, res) => {
   console.log("--> rscCtrl.dashboard");
   res.render("dashboard");
 };
+
 //---------------------------------------
 
 // AT-RESOURCES - Task - Render Add Task Form
@@ -13,53 +14,81 @@ rscCtrl.renderAddTaskForm = async (req, res) => {
   res.render("/task/add");
 };
 
-// AT-SSO - Admin - Users - Add User
+// AT-RESOURCES - Admin - Users - Add User
 rscCtrl.addTask = async (req, res) => {
   console.log("--> rscCtrl.addTask");
 };
 
-// AT-SSO - Admin - Users - Render Edit User Form
+// AT-RESOURCES - Admin - Users - Render Edit User Form
 rscCtrl.renderEditTaskForm = async (req, res) => {
   console.log("--> rscCtrl.renderEditTaskForm");
   res.render("/task/edit");
 };
 
-// AT-SSO - Admin - Users - Edit User
+// AT-RESOURCES - Admin - Users - Edit User
 rscCtrl.updateTask = async (req, res) => {
   console.log("--> rscCtrl.updateTask");
 };
 
-//-----------Sprint-----------//
-
+// AT-RESOURCES - TEAMS
+rscCtrl.renderTeamList = (req, res) => {
+  //console.log("--> rscCtrl.renderTeamList");
+  res.render("teams");
+};
+// AT-RESOURCES - MEMBERS
 rscCtrl.renderMembersList = (req, res) => {
   res.render("members");
 };
+//-----------METRICS------------
 
-// Render Sprint
-rscCtrl.renderSprint = (req, res) => {
+// AT-RESOURCES - Render Metrics
+rscCtrl.metrics = async (req, res) => {
+  //console.log("--> rscCtrl.renderMetrics");
+  res.render("metrics");
+};
+
+//-----------SPRINT-----------//
+
+// AT-RESOURCES - Render Sprint
+rscCtrl.sprint = (req, res) => {
   res.render("sprint");
 };
 
-// Render addSprint
+// AT-RESOURCES - Render addSprint
 rscCtrl.renderAddSprintForm = (req, res) => {
   res.render("/sprint/add");
 };
 
-// AddSprint
+// AT-RESOURCES - AddSprint
 rscCtrl.addSprint = (req, res) => {
   //res.render("/sprint/add");
   console.log("Method addSprint");
 };
 
-// Render editSprint
+// AT-RESOURCES - Render editSprint
 rscCtrl.renderEditSprintForm = (req, res) => {
   // res.render("/sprint/edit/:id");
   console.log("Method editSprint");
 };
 
-// Update sprint
+// AT-RESOURCES - Update sprint
 rscCtrl.updateSprint = (req, res) => {
   res.render("/sprint/edit/:id");
+};
+
+//-----------BACKLOG-----------//
+
+// AT-RESOURCES - Render Backlog
+rscCtrl.backlog = async (req, res) => {
+  console.log("--> rscCtrl.renderBacklog");
+  res.render("backlog");
+};
+
+//-----------MENTORS-----------//
+
+// AT-RESOURCES - Render Mentors
+rscCtrl.mentors = (req, res) => {
+  res.render("mentors");
 };
 
 module.exports = rscCtrl;

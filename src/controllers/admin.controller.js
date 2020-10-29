@@ -11,21 +11,21 @@ adminCtrl.renderIndex = async(req, res) => {
 };
 
 // AT-RESOURCES - Admin - Story list
-// adminCtrl.renderStoryList = async (req, res) => {
-//     try{
-//         const responseStoryList = await resourceServiceApi.getStoryList();
-//         console.log("--> adminCtrl.renderStoryList");
-//         const storys = responseStoryList.data;
-//         res.render("/admin/story/list-story", { storys });
-//     } catch {
-//         console.error(err.message);
-//         res.render("/admin/story/list-story", { storys });
-//     }
-// };
-
 adminCtrl.renderStoryList = async (req, res) => {
-    res.render("/admin/story/list-story");
-    console.log("story")
+    let story = [];
+    try{
+        const responseStoryList = await resourceServiceApi.getStoryList();
+        if (responseStoryList === null || responseStoryList === undefined){
+            req.flash("error_msg", "Service unavailable");
+        } else {
+            console.log("--> adminCtrl.renderStoryList");
+            story = responseStoryList.data;
+        }
+    } catch(err) {
+        console.error(err.message);
+    }  finally {
+        res.render("admin/story/list-story", { story});
+    }
 };
 
 module.exports = adminCtrl;

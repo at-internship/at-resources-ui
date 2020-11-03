@@ -9,4 +9,10 @@ adminCtrl.renderIndex = async(req, res) => {
     res.render("admin/index");
 };
 
+// AT-RESOURCES - Admin - Render Edit Story Form
+adminCtrl.renderEditStoryForm = async(req, res) => {
+    console.log("--> adminCtrl.renderEditStoryForm");
+    res.render("admin/story/edit-story");
+};
+
 module.exports = adminCtrl;

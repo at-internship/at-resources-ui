@@ -15,6 +15,8 @@ adminCtrl.renderIndex = async(req, res) => {
 
 adminCtrl.deleteStory = async(req, res) => {
     console.log("--> adminCtrl.deleteStory");
+   
+    req.flash("success_msg", "Story Deleted Successfully");
     res.redirect("/admin/story");
 };
 

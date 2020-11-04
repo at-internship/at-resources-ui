@@ -4,7 +4,8 @@ const path = require('path');
 
 // Admin Controller
 const { renderIndex,
-        renderEditStoryForm } = require("../controllers/admin.controller");
+        renderEditStoryForm,
+        deleteStory} = require("../controllers/admin.controller");
 
 // Helpers
 // const { isAdmin } = require("../helpers/auth");
@@ -16,5 +17,8 @@ router.get("/", renderIndex);
 
 // AT-RESOURCES - Admin - Edit Story Form
 router.get("/story/edit/:id", renderEditStoryForm);
+
+// AT-RESOURCES - Admin - Delete Story
+router.get("/admin/story/delete/:id", deleteStory);
 
 module.exports = router;

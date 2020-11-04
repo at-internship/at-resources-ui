@@ -49,7 +49,7 @@ adminCtrl.addStory = async(req, res) => {
         console.log(result);
         stories = result;
     });
-
+    req.flash("success_msg", "Story Added Successfully");
     res.redirect("/admin/story");
 };
 

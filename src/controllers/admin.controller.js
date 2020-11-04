@@ -1,7 +1,7 @@
 const adminCtrl = {};
 
 // MICROSERVICE - HEROKU - SSO
-//const ssoServiceAPI = require("../services/at-sso-api.service");
+const ssoServiceAPI = require("../services/at-sso-api.service");
 
 // AT-RESOURCES - Admin - Index
 adminCtrl.renderIndex = async(req, res) => {
@@ -11,7 +11,7 @@ adminCtrl.renderIndex = async(req, res) => {
 // AT-RESOURCES - Admin - Render Story List
 adminCtrl.renderStoryList = async(req, res) => {
     try {
-        const responseStory = await resourcesServiceAPI.getAllStories();
+        const responseStory = await ssoServiceAPI.getAllStories();
         console.log("---> adminCtrl.renderStoryList.getAllStories");
         //console.log(responseStory.data);
         const story = responseStory.data;
@@ -28,16 +28,24 @@ adminCtrl.renderAddStoryForm = (req, res) => {
 
 // AT-RESOURCES - Admin - Add Story
 adminCtrl.addStory = async(req, res) => {
-    const { title, description, status, category, img } = req.body;
+    const { id, sprint_id, user_id, prority, name, description, aceptance_criteria, story_points, progress, start_date, due_date, create_date, status } = req.body;
     let stories;
     let request = {
-        title,
-        description,
-        category: category,
-        img,
-        status: parseInt(status),
+      id,
+      sprint_id,
+      user_id,
+      prority: parseInt (prority),
+      name,
+      description,
+      aceptance_criteria,
+      story_points: parseInt (story_points),
+      progress: parseInt (progress),
+      start_date: new Date (start_date),
+      due_date: new Date (due_date),
+      create_date: new Date (create_date),
+      status: parseInt (status),
     };
-    await resourcesServiceAPI.addStory(request).then(result => {
+    await ssoServiceAPI.addStory(request).then(result => {
         console.log(result);
         stories = result;
     });

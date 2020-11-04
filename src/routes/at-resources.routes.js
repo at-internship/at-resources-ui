@@ -4,6 +4,7 @@ const path = require("path");
 
 // AT-RESOURCES - Controller
 const {
+  renderDashboard,
   dashboard,
   renderAddTaskForm,
   addTask,
@@ -31,6 +32,9 @@ router.get("/", dashboard);
 
 // AT-RESOURCES - Dashboard
 router.get("/dashboard", dashboard);
+
+// AT-RESOURCES - renderDashboard
+router.get("/dashboard", renderDashboard);
 
 // AT-RESOURCES - renderAddTaskForm
 router.get("/task/add", renderAddTaskForm);

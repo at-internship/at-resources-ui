@@ -14,8 +14,8 @@ adminCtrl.renderStoryList = async(req, res) => {
         const responseStory = await ssoServiceAPI.getAllStories();
         console.log("---> adminCtrl.renderStoryList.getAllStories");
         //console.log(responseStory.data);
-        const story = responseStory.data;
-        res.render("admin/story/index", { story });
+        const stories = responseStory.data;
+        res.render("admin/story/index", { stories });
     } catch (err) {
         console.error(err.message);
         res.render("admin/story/index");

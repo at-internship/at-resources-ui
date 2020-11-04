@@ -90,4 +90,17 @@ router.get("/teams", renderTeamList);
 // AT-RESOURCES - MEMBERS
 router.get("/members", renderMembersList);
 
+//-----------STORY-----------//
+
+//AT-RESOURCES-Render Story
+router.get("/story", story);
+ 
+
+//AT-RESOURCES-Render AddStory
+router.get("/story", renderAddStoryForm);
+ 
+
+//AT-RESOURCES- AddStory
+router.get("/story", addStory);
+
 module.exports = router;

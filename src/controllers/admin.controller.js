@@ -12,19 +12,19 @@ adminCtrl.renderIndex = async(req, res) => {
 
 // AT-RESOURCES - Admin - Story list
 adminCtrl.renderStoryList = async (req, res) => {
-    let story = [];
+    let stories = [];
     try{
         const responseStoryList = await resourceServiceApi.getStoryList();
         if (responseStoryList === null || responseStoryList === undefined){
             req.flash("error_msg", "Service unavailable");
         } else {
             console.log("--> adminCtrl.renderStoryList");
-            story = responseStoryList.data;
+            stories = responseStoryList.data;
         }
     } catch(err) {
         console.error(err.message);
     }  finally {
-        res.render("admin/story/list-story", { story});
+        res.render("admin/story/list-story", { stories});
     }
 };
 

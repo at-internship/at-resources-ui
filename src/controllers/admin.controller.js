@@ -81,7 +81,7 @@ adminCtrl.deleteStory = async(req, res) => {
 adminCtrl.renderStoryList = async (req, res) => {
     let stories = [];
     try{
-        const responseStoryList = await ssoServiceAPI.getStoryList();
+        const responseStoryList = await ssoServiceAPI.getAllStories();
         if (responseStoryList === null || responseStoryList === undefined){
             req.flash("error_msg", "Service unavailable");
         } else {

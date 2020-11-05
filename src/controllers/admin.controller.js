@@ -11,7 +11,7 @@ adminCtrl.renderIndexAdmin = async(req, res) => {
 
 // AT-RESOURCES - Admin - Story list
 adminCtrl.renderStoryList = async (req, res) => {
-    let stories = [];
+    const stories = [];
     try{
         const responseStoryList = await ssoServiceAPI.getAllStories();
         if (responseStoryList === null || responseStoryList === undefined){
@@ -23,13 +23,13 @@ adminCtrl.renderStoryList = async (req, res) => {
     } catch(err) {
         console.error(err.message);
     }  finally {
-        res.render("admin/story/list-story", { stories});
+        res.render("admin/story/index", { stories});
     }
 };
 
 // AT-RESOURCES - Admin - Render Add Story Form
 adminCtrl.renderAddStoryForm = (req, res) => {
-    res.render("admin/sroty/add-story");
+    res.render("admin/story/add-story");
 };
 
 // AT-RESOURCES - Admin - Add Story

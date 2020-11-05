@@ -3,7 +3,7 @@ const router = express.Router();
 const path = require('path');
 
 // Admin Controller
-const { renderIndex,
+const { renderIndexAdmin,
         renderStoryList,
         renderAddStoryForm,
         addStory,
@@ -18,7 +18,7 @@ const { renderIndex,
 // ============= Sub Routes =============
 
 // AT-RESOURCES - Admin - Index
-router.get("/", renderIndex);
+router.get("/", renderIndexAdmin);
 
 // AT-RESOURCES - Admin - Render Story List
 router.get("/story", renderStoryList);

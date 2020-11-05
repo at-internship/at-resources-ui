@@ -4,9 +4,27 @@ const adminCtrl = {};
 const ssoServiceAPI = require("../services/at-sso-api.service");
 
 // AT-RESOURCES - Admin - Index
-adminCtrl.renderIndex = async(req, res) => {
+adminCtrl.renderIndexAdmin = async(req, res) => {
     console.log("--> adminCtrl.renderIndex");
     res.render("admin/index");
+};
+
+// AT-RESOURCES - Admin - Story list
+adminCtrl.renderStoryList = async (req, res) => {
+    let stories = [];
+    try{
+        const responseStoryList = await ssoServiceAPI.getAllStories();
+        if (responseStoryList === null || responseStoryList === undefined){
+            req.flash("error_msg", "Service unavailable");
+        } else {
+            console.log("--> adminCtrl.renderStoryList");
+            stories = responseStoryList.data;
+        }
+    } catch(err) {
+        console.error(err.message);
+    }  finally {
+        res.render("admin/story/list-story", { stories});
+    }
 };
 
 // AT-RESOURCES - Admin - Render Add Story Form
@@ -61,38 +79,6 @@ adminCtrl.deleteStory = (req, res) => {
     // Redirect
     req.flash("success_msg", "Story Deleted Successfully");
     res.redirect("/admin/Story");
-};
-
-// AT-RESOURCES - Admin - Render Edit Story Form
-adminCtrl.renderEditStoryForm = async(req, res) => {
-    console.log("--> adminCtrl.renderEditStoryForm");
-    res.render("admin/story/edit-story");
-}
-// AT-RESOURCES - Admin - Delete Story
-adminCtrl.deleteStory = async(req, res) => {
-    console.log("--> adminCtrl.deleteStory");
-   
-    req.flash("success_msg", "Story Deleted Successfully");
-    res.redirect("/admin/story");
-
-};
-
-// AT-RESOURCES - Admin - Story list
-adminCtrl.renderStoryList = async (req, res) => {
-    let stories = [];
-    try{
-        const responseStoryList = await ssoServiceAPI.getAllStories();
-        if (responseStoryList === null || responseStoryList === undefined){
-            req.flash("error_msg", "Service unavailable");
-        } else {
-            console.log("--> adminCtrl.renderStoryList");
-            stories = responseStoryList.data;
-        }
-    } catch(err) {
-        console.error(err.message);
-    }  finally {
-        res.render("admin/story/list-story", { stories});
-    }
 };
 
 module.exports = adminCtrl;

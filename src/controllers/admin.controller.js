@@ -11,7 +11,7 @@ adminCtrl.renderIndexAdmin = async(req, res) => {
 
 // AT-RESOURCES - Admin - Story list
 adminCtrl.renderStoryList = async (req, res) => {
-    const stories = [];
+    let stories = [];
     try{
         const responseStoryList = await ssoServiceAPI.getAllStories();
         if (responseStoryList === null || responseStoryList === undefined){
@@ -22,7 +22,7 @@ adminCtrl.renderStoryList = async (req, res) => {
         }
     } catch(err) {
         console.error(err.message);
-    }  finally {
+    } finally {
         res.render("admin/story/index", { stories});
     }
 };
@@ -137,6 +137,7 @@ adminCtrl.updateStory = async(req, res) => {
         req.flash("success_msg", "Story updated Successfully");
         res.redirect("/admin/story");
     };
+}
 
     // AT-RESOURCES - Admin - Delete Story
 adminCtrl.deleteStory = async(req, res) => {

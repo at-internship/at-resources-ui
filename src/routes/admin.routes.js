@@ -14,6 +14,17 @@ const { renderIndexAdmin,
 // Helpers
 // const { isAdmin } = require("../helpers/auth");
 
+//-----------STORY-----------//
+
+//AT-RESOURCES-Render Story
+router.get("/story", renderStoryList);
+
+//AT-RESOURCES-Render AddStory
+router.get("/story/add", renderAddStoryForm);
+
+//AT-RESOURCES- AddStory
+router.get("/story", addStory);
+
 // ============= Sub Routes =============
 
 // AT-RESOURCES - Admin - Index

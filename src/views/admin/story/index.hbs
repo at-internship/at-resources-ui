@@ -23,24 +23,36 @@
                     <thead>
                         <tr>
                             <th>ID</th>
+                            <th>Sprint</th>
                             <th>Name</th>
-                            <th>User Name</th>
+                            <th>User</th>
+                            <th>Priority</th>
                             <th>Description</th>
+                            <th>Story points</th>
                             <th>Status</th>
+                            <th>Progress</th>
+                            <th>Start Date</th>
+                            <th>Due Date</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
                     <tbody>
                         {{#each stories}}
                             <tr>
-                                <td>{{_id}}</th>
-                                <td>{{Name}}</th>
-                                <td>{{UserName}}</td>
+                                <td>{{id}}</th>
+                                <td>{{sprintId}}</th>
+                                <td>{{name}}</th>
+                                <td>{{userId}}</td>
+                                <td>{{priority}}</td>
                                 <td>{{description}}</td>
+                                <td>{{storyPoints}}</td>
                                 <td>{{status}}</td>
+                                <td>{{progress}}</td>
+                                <td>{{startDate}}</td>
+                                <td>{{dueDate}}</td>
                                 <td>
-                                    <a href="/admin/story/edit/{{_id}}"><i class="fas fa-edit"></i></a>
-                                    <a href="/admin/story/delete/{{_id}}"><i class="fas fa-trash" style="color:red"></i></a>
+                                    <a href="/admin/story/edit/{{id}}"><i class="fas fa-edit"></i></a>
+                                    <a href="/admin/story/delete/{{id}}"><i class="fas fa-trash" style="color:red"></i></a>
                                 </td>
                             </tr>
                         {{/each}}

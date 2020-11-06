@@ -9,8 +9,7 @@ const { renderIndexAdmin,
         addStory,
         renderEditStoryForm,
         updateStory,
-        deleteStory
-    } = require("../controllers/admin.controller");
+        deleteStory} = require("../controllers/admin.controller");
 
 // Helpers
 // const { isAdmin } = require("../helpers/auth");
@@ -20,23 +19,14 @@ const { renderIndexAdmin,
 // AT-RESOURCES - Admin - Index
 router.get("/", renderIndexAdmin);
 
-// AT-RESOURCES - Admin - Render Story List
-router.get("/story", renderStoryList);
-
-// AT-RESOURCES - Admin - Render Add Story
-router.get("/story/add", renderAddStoryForm);
-
-// AT-RESOURCES - Admin - Add Story
-router.post("/story/add", addStory);
-
-// AT-RESOURCES - Admin - Render Edit Story
+// AT-RESOURCES - Admin - Edit Story Form
 router.get("/story/edit/:id", renderEditStoryForm);
 
-// AT-RESOURCES - Admin - Update Story
-router.put("/story/edit/:id", updateStory);
+// ========== EDIT STORY =======
+
+router.put("/admin/story/edit-story/:id", updateStory);
 
 // AT-RESOURCES - Admin - Delete Story
-router.get("/story/delete/:id", deleteStory);
+router.get("/admin/story/delete/:id", deleteStory);
 
 module.exports = router;
-

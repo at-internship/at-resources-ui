@@ -3,7 +3,10 @@ const router = express.Router();
 const path = require('path');
 
 // Admin Controller
-const { renderIndex,
+const { renderIndexAdmin,
+        renderStoryList,
+        renderAddStoryForm,
+        addStory,
         renderEditStoryForm,
         updateStory,
         deleteStory} = require("../controllers/admin.controller");
@@ -11,10 +14,21 @@ const { renderIndex,
 // Helpers
 // const { isAdmin } = require("../helpers/auth");
 
+//-----------STORY-----------//
+
+//AT-RESOURCES-Render Story
+router.get("/story", renderStoryList);
+
+//AT-RESOURCES-Render AddStory
+router.get("/story/add", renderAddStoryForm);
+
+//AT-RESOURCES- AddStory
+router.get("/story", addStory);
+
 // ============= Sub Routes =============
 
 // AT-RESOURCES - Admin - Index
-router.get("/", renderIndex);
+router.get("/", renderIndexAdmin);
 
 // AT-RESOURCES - Admin - Edit Story Form
 router.get("/story/edit/:id", renderEditStoryForm);

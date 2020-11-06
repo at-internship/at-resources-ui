@@ -1,0 +1,72 @@
+
+<div class="tab-content card" id="nav-tabContent">
+    <div class="tab-pane fade show active" id="search-md" role="tabpanel" aria-labelledby="search-tab-md">
+        <!-- Story Search -->
+        <section class="card">
+            <div class="card-body">
+                <table style="width: 100%">
+                    <tr>
+                        <td style="text-align: left;">
+                            <h4 class="title_section">Stories Module</h4>
+                        </td>
+                        <td style="text-align: right;">
+                            <a class="btn btn-primary" href="/admin/story/add/">&raquo; Add New Story</a>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </section>
+
+        <section class="card">
+            <div class="card-body">
+                <table id="storiesTable" class="display responsive nowrap" style="width:100%">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Sprint</th>
+                            <th>Name</th>
+                            <th>User</th>
+                            <th>Priority</th>
+                            <th>Description</th>
+                            <th>Story points</th>
+                            <th>Status</th>
+                            <th>Progress</th>
+                            <th>Start Date</th>
+                            <th>Due Date</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each stories}}
+                            <tr>
+                                <td>{{id}}</th>
+                                <td>{{sprintId}}</th>
+                                <td>{{name}}</th>
+                                <td>{{userId}}</td>
+                                <td>{{priority}}</td>
+                                <td>{{description}}</td>
+                                <td>{{storyPoints}}</td>
+                                <td>{{status}}</td>
+                                <td>{{progress}}</td>
+                                <td>{{startDate}}</td>
+                                <td>{{dueDate}}</td>
+                                <td>
+                                    <a href="/admin/story/edit/{{id}}"><i class="fas fa-edit"></i></a>
+                                    <a href="/admin/story/delete/{{id}}"><i class="fas fa-trash" style="color:red"></i></a>
+                                </td>
+                            </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+                <script type="text/javascript">
+                    $(document).ready(function () {
+                        $('#storiesTable').DataTable();
+                    });
+                </script>
+            </div>
+        </section>
+
+        <!-- Story Search -->
+
+    </div>
+</div>

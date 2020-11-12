@@ -1,3 +1,5 @@
+
+
 <div class="container-fluid">
     <div class="row">
         <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
@@ -33,24 +35,27 @@
                             <div class="row my-3">
                                 <div class="col-md-12">
                                     <div class="card">
-                                        <div class="card-body">
-                                            <table style="width: 100%">
-                                                <tr>
-                                                    <td style="text-align: left;">
-                                                        <h3 class="title_section">My Task - Sprint 1 - sep/1 to sep/11</h3>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td style="text-align: left;">
-                                                        Task AT-001: UI mocks for AT University
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td style="text-align: left;">
-                                                        Task AT-002: Heroku config
-                                                    </td>
-                                                </tr>
+                                        <div class="card-body scroll-wrapper-div" id="dashboard-task" >
+                                            <table id="#storiesTaskTable" style="width: 100%">
+                                                {{#each storyTask}}
+                                                    <tr>
+                                                        <td>
+                                                            <h3 style="text-align: left;">Task AT #: {{name}}</h3>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            <h3 style="text-align: left;">Description: {{description}}</h3>
+                                                            <hr>
+                                                        </td>
+                                                    </tr>
+                                                {{/each}}
                                             </table>
+                                            <script type="text/javascript">
+                                                $(document).ready(function () {
+                                                    $('#storiesTaskTable').DataTable();
+                                                });
+                                            </script>
                                         </div>
                                     </div>
                                 </div>

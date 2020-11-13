@@ -342,7 +342,8 @@ Reference: https://github.com/at-internship/at-ui-mocks
         </div>
     </div>
 </div>
-<!-- Modal User Story -->
+
+<!-- Modal User Story/Task Details -->
 <div class="modal fade" id="staticBackdropStorys" data-backdrop="static" tabindex="-1" role="dialog"
     aria-labelledby="staticBackdropLabelStorys" aria-hidden="true">
     <div class="modal-dialog" role="document">
@@ -361,9 +362,12 @@ Reference: https://github.com/at-internship/at-ui-mocks
 
             <div class="modal-body">
                 <section class="my-2">
+
+                    <!-- TABLE PRINCIPAL -->
                     <table style="width: 90%;" cellspacing="10" cellpadding="10">
                         <tr style="vertical-align: top;">
                             <td style="text-align: left;">
+                                <!-- DETAILS -->
                                 <h3 style="font-weight: 400;">
                                     <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-journal-bookmark"
                                         fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -374,7 +378,9 @@ Reference: https://github.com/at-internship/at-ui-mocks
                                         <path fill-rule="evenodd"
                                             d="M6 8V1h1v6.117L8.743 6.07a.5.5 0 0 1 .514 0L11 7.117V1h1v7a.5.5 0 0 1-.757.429L9 7.083 6.757 8.43A.5.5 0 0 1 6 8z" />
                                     </svg>
-                                    Details</h3>
+                                    Details
+                                </h3>
+
                                 <table style="width: 100%;">
                                     <tr>
                                         <td style="text-align: left;">
@@ -395,9 +401,11 @@ Reference: https://github.com/at-internship/at-ui-mocks
                                         </td>
                                     </tr>
                                 </table>
+                                <!-- DETAILS -->
 
                                 <br>
 
+                                <!-- DESCRIPTION -->
                                 <h4 style="font-weight: 400;">
                                     <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-card-text"
                                         fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -405,25 +413,28 @@ Reference: https://github.com/at-internship/at-ui-mocks
                                             d="M14.5 3h-13a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z" />
                                         <path fill-rule="evenodd"
                                             d="M3 5.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zM3 8a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9A.5.5 0 0 1 3 8zm0 2.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5z" />
-                                    </svg> Description</h3>
-                                    <div class="form-group">
-                                        <div id="summernote">
-                                            <p>**ACCEPTANCE CRITERIA**
-                                                Migrate views to AT-RSC-UI project from at-ui-mocks repository:
-                                                Reference: https://github.com/at-internship/at-ui-mocks
+                                    </svg> Description
+                                </h4>
+                                <div class="form-group">
+                                    <div id="summernote">
+                                        <p>**ACCEPTANCE CRITERIA**
+                                            Migrate views to AT-RSC-UI project from at-ui-mocks repository:
+                                            Reference: https://github.com/at-internship/at-ui-mocks
 
-                                                - CONTROLLERS
-                                                - general controller at-resources.controller.js (for dashboard)
-                                                - admin.controller.js</p>
-                                        </div>
-                                        <script>
-                                            $(document).ready(function () {
-                                                $('#summernote').summernote();
-                                            });
-                                        </script>
+                                            - CONTROLLERS
+                                            - general controller at-resources.controller.js (for dashboard)
+                                            - admin.controller.js</p>
                                     </div>
-
+                                    <script>
+                                        $(document).ready(function () {
+                                            $('#summernote').summernote();
+                                        });
+                                    </script>
+                                </div>
+                                <!-- DESCRIPTION -->
+                            </td>
                             <td style="text-align: left;">
+                                <!-- MEMBERS -->
                                 <h4 style="font-weight: 400;">
                                     <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-person-fill"
                                         fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -433,13 +444,10 @@ Reference: https://github.com/at-internship/at-ui-mocks
                                     </svg>
                                     Members
                                 </h4>
+
                                 <table style="width: 100%;">
-
                                     <tr>
-                                        </style>
-
-                                        <body>
-
+                                        <td style="text-align: left;">
                                             <div id="myDIV" class="header">
                                                 <input type="text" id="myInput" placeholder="Member">
                                                 <span onclick="newElement()" class="addBtn">Add Member</span>
@@ -451,59 +459,97 @@ Reference: https://github.com/at-internship/at-ui-mocks
                                                 <li>Miguel</li>
                                                 <li>Oscar</li>
                                             </ul>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <!-- MEMBERS -->
+
+                                <br>
+
+                                <!-- DATES -->
+                                <h4 style="font-weight: 400;">
+                                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-calendar-week"
+                                        fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd"
+                                            d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z" />
+                                        <path
+                                            d="M11 6.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-5 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1z" />
+                                    </svg>
+                                    Dates
+                                </h4>
+                                
+                                <!-- DATES -->
+                            </td>
+                        </tr>
+                        <tr style="vertical-align: top;">
+                            <td colspan="2" style="text-align: left;">
+                                <!-- TASKS -->
+                                <!-- TASKS -->
+                            </td>
+                        </tr>
+                    </table>
+                    <!-- TABLE PRINCIPAL -->
+
+
+
+                    <table style="width: 90%;" cellspacing="10" cellpadding="10">
+                        <tr style="vertical-align: top;">
+                            <td style="text-align: left;">
+
+
+
+
+
+                            <td style="text-align: left;">
+
+
                             </td>
 
 
-                    <h4 style="font-weight: 400;">
-                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-calendar-week"
-                            fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd"
-                                d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z" />
-                            <path
-                                d="M11 6.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-5 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1z" />
-                        </svg>
-                        Dates</h3>
-                        <table style="width: 100%;">
-                            <tr>
-                                <td style="text-align: left;">
 
-                                    <fieldset>
-                                        <label for="date">Created:</label>
-                                        <input type="date" id="date" placeholder="Select a date"
-                                            data-datepicker-events="{date: '2020-07-12T12:00', name: 'Business Lunch Zürich', type: 'holiday'}"
-                                            required />
-                                        
-                                    </fieldset>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td style="text-align: left;">
 
-                                    <fieldset>
-                                        <label for="date">Updated:</label>
-                                        <input type="date" id="date" placeholder="Select a date"
-                                            data-datepicker-events="{date: '2020-07-12T12:00', name: 'Business Lunch Zürich', type: 'holiday'}"
-                                            required />
+                            <table style="width: 100%;">
+                                <tr>
+                                    <td style="text-align: left;">
 
-                                    </fieldset>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td style="text-align: left;">
+                                        <fieldset>
+                                            <label for="date">Created:</label>
+                                            <input type="date" id="date" placeholder="Select a date"
+                                                data-datepicker-events="{date: '2020-07-12T12:00', name: 'Business Lunch Zürich', type: 'holiday'}"
+                                                required />
 
-                                    <fieldset>
-                                        <label for="date">Due Date:</label>
-                                        <input type="date" id="date" placeholder="Select a date"
-                                            data-datepicker-events="{date: '2020-07-12T12:00', name: 'Business Lunch Zürich', type: 'holiday'}"
-                                            required />
-                                    </fieldset>
-                                </td>
-                            </tr>
-                        </table>
+                                        </fieldset>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: left;">
 
-                        </td>
+                                        <fieldset>
+                                            <label for="date">Updated:</label>
+                                            <input type="date" id="date" placeholder="Select a date"
+                                                data-datepicker-events="{date: '2020-07-12T12:00', name: 'Business Lunch Zürich', type: 'holiday'}"
+                                                required />
+
+                                        </fieldset>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="text-align: left;">
+
+                                        <fieldset>
+                                            <label for="date">Due Date:</label>
+                                            <input type="date" id="date" placeholder="Select a date"
+                                                data-datepicker-events="{date: '2020-07-12T12:00', name: 'Business Lunch Zürich', type: 'holiday'}"
+                                                required />
+                                        </fieldset>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            </td>
                         </tr>
-                        </table>
+                    </table>
+
                 </section>
             </div>
             <table>
@@ -727,3 +773,4 @@ Reference: https://github.com/at-internship/at-ui-mocks
         </div>
     </div>
 </div>
+<!-- Modal User Story/Task Details -->

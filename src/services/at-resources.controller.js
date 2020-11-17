@@ -1,9 +1,9 @@
 const axios = require("axios");
 const AT_RESOURCES_SERVICE_URI = process.env.AT_RESOURCES_SERVICE_URI;
 console.log("AT_RESOURCES_SERVICE_URI: " + AT_RESOURCES_SERVICE_URI);
-const ssoServiceAPI = {};
+const atResources = {};
 
-ssoServiceAPI.getAllStories = () => {
+atResources.getAllStories = () => {
   return axios({
     method: "GET",
     url: AT_RESOURCES_SERVICE_URI + `/v1/story`,
@@ -15,7 +15,7 @@ ssoServiceAPI.getAllStories = () => {
   });
 };
 
-ssoServiceAPI.addStory = (data) => {
+atResources.addStory = (data) => {
   return axios({
     method: "POST",
     url: AT_RESOURCES_SERVICE_URI + `/v1/story`,
@@ -28,4 +28,4 @@ ssoServiceAPI.addStory = (data) => {
   });
 };
 
-module.exports = ssoServiceAPI;
+module.exports = atResources;

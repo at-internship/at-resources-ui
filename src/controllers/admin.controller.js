@@ -1,7 +1,7 @@
 const adminCtrl = {};
 
 // MICROSERVICE - HEROKU - SSO
-const ssoServiceAPI = require("../services/at-sso-api.service");
+const atResources = require("../services/at-resources.controller");
 
 // AT-RESOURCES - Admin - Index
 adminCtrl.renderIndexAdmin = async(req, res) => {
@@ -13,7 +13,7 @@ adminCtrl.renderIndexAdmin = async(req, res) => {
 adminCtrl.renderStoryList = async (req, res) => {
     let stories = [];
     try{
-        const responseStoryList = await ssoServiceAPI.getAllStories();
+        const responseStoryList = await atResources.getAllStories();
         if (responseStoryList === null || responseStoryList === undefined){
             req.flash("error_msg", "Service unavailable");
         } else {
@@ -51,7 +51,7 @@ adminCtrl.addStory = async(req, res) => {
       create_date: new Date (create_date),
       status: parseInt (status),
     };
-    await ssoServiceAPI.addStory(request).then(result => {
+    await atResources.addStory(request).then(result => {
         console.log(result);
         stories = result;
     });

@@ -448,17 +448,39 @@ Reference: https://github.com/at-internship/at-ui-mocks
                                 <table style="width: 100%;">
                                     <tr>
                                         <td style="text-align: left;">
-                                            <div id="myDIV" class="header">
-                                                <input type="text" id="myInput" placeholder="Member">
-                                                <span onclick="newElement()" class="addBtn">Add Member</span>
-                                            </div>
+                                            <div class="container">
+                                                <input id="inputField" type="text" size="10" placeholder="Add member"
+                                                    class="form-control">
 
-                                            <ul id="myUL">
-                                                <li>Jhon</li>
-                                                <li class="checked">Mario</li>
-                                                <li>Miguel</li>
-                                                <li>Oscar</li>
-                                            </ul>
+                                                <button class="btn btn-primary" id="addToDo"><svg width="1em"
+                                                        height="1em" viewBox="0 0 16 16" class="bi bi-person-plus-fill"
+                                                        fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+
+                                                        <path fill-rule="evenodd"
+                                                            d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm7.5-3a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z" />
+                                                    </svg></button>
+                                                <div class="to-dos" id="toDoContainer">
+                                                </div>
+                                            </div>
+                                            <script>
+                                                let addToDoButton = document.getElementById('addToDo');
+                                                let toDoContainer = document.getElementById('toDoContainer');
+                                                let inputField = document.getElementById('inputField');
+
+                                                addToDoButton.addEventListener('click', function () {
+                                                    var paragraph = document.createElement('p');
+                                                    paragraph.classList.add('paragraph-styling');
+                                                    paragraph.innerText = inputField.value;
+                                                    toDoContainer.appendChild(paragraph);
+                                                    inputField.value = "";
+                                                    paragraph.addEventListener('click', function () {
+                                                        paragraph.style.textDecoration = "line-through";
+                                                    })
+                                                    paragraph.addEventListener('dblclick', function () {
+                                                        toDoContainer.removeChild(paragraph);
+                                                    })
+                                                })
+                                            </script
                                         </td>
                                     </tr>
                                 </table>

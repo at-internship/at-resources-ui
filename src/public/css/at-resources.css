@@ -469,3 +469,11 @@ body {
       margin-top: -50px;
     }
   }
+
+  /* Style members list */
+  .paragraph-styling {
+    margin: 0;
+    cursor: pointer;
+    font-size: 16px;
+    color: rgb(58, 134, 248);
+}

@@ -34,7 +34,8 @@
                             <ul id="sortable1" class="list-group connectedSortable">
                                 <li
                                     class="list-group-item active w-100 d-flex justify-content-between align-items-center">
-                                    <a href="#" class="w-25" data-toggle="modal" data-target="#staticBackdropStory">Task
+                                    <a href="#" class="w-25" data-toggle="modal"
+                                        data-target="#staticBackdropStorys">Task
                                         AT-001</a>
                                     <span class="w-75">
                                         <span class="badge badge-primary badge-pill" title="Task">Task</span>
@@ -55,7 +56,8 @@
                                     <span class="badge badge-primary badge-pill" title="Story points">5</span>
                                 </li>
                                 <li class="list-group-item w-100 d-flex justify-content-between align-items-center">
-                                    <a href="#" class="w-25">US AT-003</a>
+                                    <a href="#" class="w-25" data-toggle="modal" data-target="#staticBackdropStorys">US
+                                        AT-003</a>
                                     <span class="w-75">
                                         <span class="badge badge-success badge-pill" title="User Story">US</span>
                                         EPIC RE-009 Implement Orika Mapper on at-resources-api
@@ -64,7 +66,8 @@
                                     <span class="badge badge-primary badge-pill" title="Story points">3</span>
                                 </li>
                                 <li class="list-group-item w-100 d-flex justify-content-between align-items-center">
-                                    <a href="#" class="w-25">US AT-004</a>
+                                    <a href="#" class="w-25" data-toggle="modal" data-target="#staticBackdropStorys">US
+                                        AT-004</a>
                                     <span class="w-75">
                                         <span class="badge badge-success badge-pill" title="User Story">US</span>
                                         EPIC Consume AT-UNIVERSITY - COURSE endpoint
@@ -219,128 +222,6 @@
         connectWith: ".connectedSortable"
     });
 </script>
-
-<!-- Modal User Story -->
-<div class="modal fade" id="staticBackdropStory" data-backdrop="static" tabindex="-1" role="dialog"
-    aria-labelledby="staticBackdropLabelStory" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header" style="vertical-align: middle;">
-                <h3 class="modal-title" id="staticBackdropLabelStory" style="font-weight: 400;">
-                    EPIC Migrate AT-RSC-UI views from AT UI Mocks <br>
-                    <span class="badge badge-warning badge-pill" title="Story Label">Front end</span>
-                </h3>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-
-            <div class="modal-body">
-                <section class="my-2">
-                    <table style="width: 100%;" cellspacing="10" cellpadding="10">
-                        <tr style="vertical-align: top;">
-                            <td style="text-align: left;">
-                                <h4 style="font-weight: 400;">Details</h3>
-                                    <table style="width: 100%;">
-                                        <tr>
-                                            <td style="text-align: left;">
-                                                Type: <span class="badge badge-success badge-pill">US</span>
-                                            </td>
-                                            <td style="text-align: left;">
-                                                Status: <span class="badge badge-warning badge-pill">IN PROGRESS</span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td style="text-align: left;">
-                                                Priority: <span class="badge badge-danger badge-pill">High</span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td style="text-align: left;">
-                                                Story Points: <span class="badge badge-primary badge-pill">5</span>
-                                            </td>
-                                        </tr>
-                                    </table>
-
-                                    <br>
-
-                                    <h4 style="font-weight: 400;">Description</h3>
-                                        <div class="form-group">
-                                            <textarea id="description" name="description" style="width: 400px;"
-                                                rows="10" cols="20" class="form-control">
-**ACCEPTANCE CRITERIA**
-Migrate views to AT-RSC-UI project from at-ui-mocks repository:
-Reference: https://github.com/at-internship/at-ui-mocks
-
-- CONTROLLERS
-- general controller at-resources.controller.js (for dashboard)
-- admin.controller.js
-                                    </textarea>
-                                        </div>
-
-                                        <h4 style="font-weight: 400;">Task</h3>
-                                            <table style="width: 100%;">
-                                                <tr>
-                                                    <td style="text-align: left;">
-                                                        Task AT-001: UI mocks for AT University
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td style="text-align: left;">
-                                                        Task AT-002: Heroku config
-                                                    </td>
-                                                </tr>
-                                            </table>
-                            </td>
-                            <td style="text-align: left;">
-                                <h4 style="font-weight: 400;">Members</h3>
-                                    <table style="width: 100%;">
-                                        <tr>
-                                            <td style="text-align: left;">
-                                                Assignee: Joseph S.
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td style="text-align: left;">
-                                                Reporter: Miguel H.
-                                            </td>
-                                        </tr>
-                                    </table>
-
-                                    <br>
-
-                                    <h4 style="font-weight: 400;">Dates</h3>
-                                        <table style="width: 100%;">
-                                            <tr>
-                                                <td style="text-align: left;">
-                                                    Created: 2020-12-01
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td style="text-align: left;">
-                                                    Updated: 2020-12-02
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td style="text-align: left;">
-                                                    Due date: 2020-12-15
-                                                </td>
-                                            </tr>
-                                        </table>
-
-                            </td>
-                        </tr>
-                    </table>
-                </section>
-            </div>
-
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary rounded" data-dismiss="modal">Cancel</button>
-                <button type="button" class="btn btn-primary rounded">Save</button>
-            </div>
-        </div>
-    </div>
-</div>
 
 <!-- Modal User Story/Task Details -->
 <div class="modal fade" id="staticBackdropStorys" data-backdrop="static" tabindex="-1" role="dialog"
@@ -545,7 +426,8 @@ Reference: https://github.com/at-internship/at-ui-mocks
                                     <div class="col-md"></div>
                                     <div class="card-hover-shadow-2x mb-3 card">
                                         <div class="card-header-tab card-header">
-                                            <div class="card-header-title font-size-lg text-capitalize font-weight-normal">
+                                            <div
+                                                class="card-header-title font-size-lg text-capitalize font-weight-normal">
                                                 <i class="fa fa-tasks"></i>&nbsp;Task Lists
                                             </div>
                                         </div>
@@ -571,18 +453,21 @@ Reference: https://github.com/at-internship/at-ui-mocks
                                                                         </div>
                                                                         <div class="widget-content-left">
                                                                             <div class="widget-heading">
-                                                                                UI mocks for AT University 
-                                                                                <div class="badge badge-danger ml-2">High</div>
+                                                                                UI mocks for AT University
+                                                                                <div class="badge badge-danger ml-2">
+                                                                                    High</div>
                                                                             </div>
                                                                             <div class="widget-subheading">
                                                                                 <i>Task AT-001</i>
                                                                             </div>
                                                                         </div>
                                                                         <div class="widget-content-right">
-                                                                            <button class="border-0 btn-transition btn btn-outline-success">
+                                                                            <button
+                                                                                class="border-0 btn-transition btn btn-outline-success">
                                                                                 <i class="fa fa-check"></i>
                                                                             </button>
-                                                                            <button class="border-0 btn-transition btn btn-outline-danger">
+                                                                            <button
+                                                                                class="border-0 btn-transition btn btn-outline-danger">
                                                                                 <i class="fa fa-trash"></i>
                                                                             </button>
                                                                         </div>

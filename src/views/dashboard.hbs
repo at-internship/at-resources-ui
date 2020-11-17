@@ -36,26 +36,80 @@
                                 <div class="col-md-12">
                                     <div class="card">
                                         <div class="card-body scroll-wrapper-div" id="dashboard-task" >
+                                            {{!-- Task List --}}
                                             <table id="#storiesTaskTable" style="width: 100%">
-                                                {{#each storyTask}}
-                                                    <tr>
-                                                        <td>
-                                                            <h3 style="text-align: left;">Task AT #: {{name}}</h3>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <h3 style="text-align: left;">Description: {{description}}</h3>
-                                                            <hr>
-                                                        </td>
-                                                    </tr>
-                                                {{/each}}
+                                                <tr>
+                                                    <td>
+                                                        <div class="box">
+                                                            <div class="col-md"></div>
+                                                            <div class="card-hover-shadow-2x mb-3 card">
+                                                                <div class="card-header-tab card-header">
+                                                                    <div
+                                                                        class="card-header-title font-size-lg text-capitalize font-weight-normal">
+                                                                        <i class="fa fa-tasks"></i>&nbsp;Task Lists
+                                                                    </div>
+                                                                </div>
+                                                                <div class="scroll-area-sm">
+                                                                    <perfect-scrollbar class="ps-show-limits">
+                                                                        {{#each storyTask}}
+                                                                            <div style="position: static;" class="ps ps--active-y">
+                                                                                <div class="ps-content">
+                                                                                    <ul class=" list-group list-group-flush">
+                                                                                        <li class="list-group-item">
+                                                                                            <div class="todo-indicator bg-warning">
+                                                                                            </div>
+                                                                                            <div class="widget-content p-0">
+                                                                                                <div class="widget-content-wrapper">
+                                                                                                    <div class="widget-content-left mr-2">
+                                                                                                        <div class="custom-checkbox custom-control">
+                                                                                                            <input class="custom-control-input"
+                                                                                                                id="exampleCustomCheckbox{{id}}"
+                                                                                                                type="checkbox">
+                                                                                                            <label class="custom-control-label"
+                                                                                                                for="exampleCustomCheckbox{{id}}">&nbsp;
+                                                                                                            </label>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                    <div class="widget-content-left">
+                                                                                                        <div class="widget-heading">
+                                                                                                            {{name}}
+                                                                                                            <div class="badge badge-danger ml-2">
+                                                                                                                High</div>
+                                                                                                        </div>
+                                                                                                        <div class="widget-subheading">
+                                                                                                            <i>{{description}}</i>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                    <div class="widget-content-right">
+                                                                                                        <button
+                                                                                                            class="border-0 btn-transition btn btn-outline-success">
+                                                                                                            <i class="fa fa-check"></i>
+                                                                                                        </button>
+                                                                                                        <button
+                                                                                                            class="border-0 btn-transition btn btn-outline-danger">
+                                                                                                            <i class="fa fa-trash"></i>
+                                                                                                        </button>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </li>
+                                                                                    </ul>
+                                                                                </div>
+                                                                            </div>
+                                                                        {{/each}}
+                                                                    </perfect-scrollbar>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
                                             </table>
                                             <script type="text/javascript">
                                                 $(document).ready(function () {
                                                     $('#storiesTaskTable').DataTable();
                                                 });
                                             </script>
+                                            {{!--// Task List --}}
                                         </div>
                                     </div>
                                 </div>

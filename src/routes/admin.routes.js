@@ -32,8 +32,6 @@ router.get("/story/add", renderAddStoryForm);
 router.post("/story/add", addStory);
 
 
-// ========== EDIT STORY =======
-
 // AT-RESOURCES - Admin - Render Edit Story Form
 router.get("/story/edit/:id", renderEditStoryForm);
 // AT-RESOURCES - Admin - Edit Story

@@ -17,7 +17,7 @@
             <div class="card-body">
                 <form class="form-horizontal" action="/admin/story/add" method="POST">
                     <div class="form-group">
-                        <label for="story_sprintId">SELECT SPRINT</label>
+                        <label for="story_sprintId">Sprint:</label>
                         <select required class="form-control" name="story_sprintId" id="story_sprintId">
                             <option value="">Choose an option</option>
                             <option value="5fb42492a62def1daaa62a27">Sprint 1</option>
@@ -29,7 +29,7 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="story_userId">SELECT USER</label>
+                        <label for="story_userId">User:</label>
                         <select required class="form-control" name="story_userId" id="story_userId">
                             <option value="">Choose an option</option>
                             <option value="5fb42492a62def1daaa62a27">User 1</option>
@@ -38,7 +38,7 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="story_priority">SELECT PRIORITY</label>
+                        <label for="story_priority">Priority:</label>
                         <select required class="form-control" name="story_priority" id="story_priority">
                             <option value="">Choose an option</option>
                             <option value="High">High</option>
@@ -47,18 +47,21 @@
                         </select>
                     </div>
                     <div class="form-group">
+                        <label for="story_name">Name:</label>
                         <input type="text" id="story_name" name="story_name" required class="form-control" placeholder="Name" />
                     </div>
                     <div class="form-group">
+                        <label for="story_description">Description:</label>
                         <textarea id="story_description" name="story_description" required class="form-control"
                             placeholder="Description"></textarea>
                     </div>
                     <div class="form-group">
+                        <label for="story_sprintId">Acceptance Criteria:</label>
                         <textarea id="story_acceptanceCriteria" name="story_acceptanceCriteria" required class="form-control"
                             placeholder="Aceptance Criteria"></textarea>
                     </div>
                     <div class="form-group">
-                        <label for="story_storyPoints">STORY POINTS</label>
+                        <label for="story_storyPoints">Story Points:</label>
                         <select required class="form-control" name="story_storyPoints" id="story_storyPoints">
                             <option value="">Choose an option</option>
                             <option value="1">1</option>
@@ -69,6 +72,7 @@
                         </select>
                     </div>
                     <div class="form-group">
+                        <label for="story_progress">Progress:</label>
                         <input type="text" id="story_progress" name="story_progress" required class="form-control"
                             placeholder="Progress" />
                     </div>
@@ -85,7 +89,7 @@
                     <div class="form-group">
                         <label for="story_status">Status:</label>
                         <select name="story_status" id="story_status" class="form-control">
-                            <option value="">- select -</option>
+                            <option value="">Choose an option</option>
                             <option value="1">Active</option>
                             <option value="0">Inactive</option>
                         </select>

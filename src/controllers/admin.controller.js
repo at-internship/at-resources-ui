@@ -1,7 +1,7 @@
 const adminCtrl = {};
 
 // MICROSERVICE - HEROKU - SSO
-const atResources = require("../services/at-resources.controller");
+const atResources = require("../services/at-resources-api.service");
 
 // AT-RESOURCES - Admin - Index
 adminCtrl.renderIndexAdmin = async(req, res) => {

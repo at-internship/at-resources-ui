@@ -1,3 +1,5 @@
+const atResources = require("../services/at-resources-api.service");
+
 const rscCtrl = {};
 
 // AT-RESOURCES - Index/Dashboard
@@ -52,7 +54,19 @@ rscCtrl.metrics = async (req, res) => {
 // AT-RESOURCES - Render Sprint
 rscCtrl.sprint = (req, res) => {
   res.render("sprint");
+  atResources.getAllStories = () => {
+    return axios({
+      method: "GET",
+      url: AT_RESOURCES_SERVICE_URI + `/v1/story`,
+      headers: {
+        "content-type": "application/json",
+      },
+    }).catch(function (error) {
+      console.log("Error: " + error.message);
+    });
+  };
 };
+
 
 // AT-RESOURCES - Render addSprint
 rscCtrl.renderAddSprintForm = (req, res) => {

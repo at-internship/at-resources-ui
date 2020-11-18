@@ -28,4 +28,18 @@ atResources.addStory = (data) => {
   });
 };
 
+let stories = [];
+try{
+    const responseStoryList = await atResources.getAllStories();
+    if (responseStoryList === null || responseStoryList === undefined){
+        req.flash("error_msg", "Service unavailable");
+    } else {
+        console.log("--> adminCtrl.renderStoryList");
+        stories = responseStoryList.data;
+    }
+} catch(err) {
+    console.error(err.message);
+} finally {
+    res.render("admin/story/index", { stories});
+}
 module.exports = atResources;

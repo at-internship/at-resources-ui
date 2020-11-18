@@ -13,7 +13,7 @@ adminCtrl.renderIndexAdmin = async(req, res) => {
 adminCtrl.renderStoryList = async(req, res) => {
     let stories = [];
     try {
-        const responseStoryList = await ssoServiceAPI.getAllStories();
+        const responseStoryList = await atResources.getAllStories();
         if (responseStoryList === null || responseStoryList === undefined) {
             req.flash("error_msg", "Service unavailable");
         } else {
@@ -67,7 +67,7 @@ adminCtrl.addStory = async(req, res) => {
             createDate: new Date(),
             status: parseInt(story_status)
         };
-        await ssoServiceAPI.addStory(request).then(result => {
+        await atResources.addStory(request).then(result => {
             console.log(result);
         });
 
@@ -88,11 +88,11 @@ adminCtrl.renderEditStoryForm = async(req, res) => {
     //res.render("admin/story/edit-story");
 
     let storyId = req.params.id;
-    ssoServiceAPI.getStoryById(storyId);
+    atResources.getStoryById(storyId);
 
     // Temporary code to retrive information about the course
 
-    let responseStories = await ssoServiceAPI.getAllStories();
+    let responseStories = await atResources.getAllStories();
 
     storyDetails = responseStories.data.filter(function(c) { return c.id == storyId; });
 
@@ -207,7 +207,7 @@ adminCtrl.updateStory = async(req, res) => {
                 createDate: new Date(),
                 status: parseInt(story_status),
             };
-            await ssoServiceAPI.updateStory(request, story_id).then(result => {
+            await atResources.updateStory(request, story_id).then(result => {
                 console.log(result);
             });
 
@@ -233,7 +233,7 @@ adminCtrl.deleteStory = async(req, res) => {
         const errors = [];
 
         let storyId = req.params.id;
-        ssoServiceAPI.deleteStory(storyId);
+        atResources.deleteStory(storyId);
 
         // Redirect
         req.flash("success_msg", "Story Deleted Successfully");

@@ -3,14 +3,11 @@ const atResources = require("../services/at-resources-api.service");
 
 const rscCtrl = {};
 
-// MICROSERVICE - HEROKU - SSO
-const ssoServiceAPI = require("../services/at-sso-api.service");
-
 // AT-RESOURCES - Index/Dashboard
 rscCtrl.dashboard = async (req, res) => {
   let storyTask = [];
   try{
-    const responseStoryTask = await ssoServiceAPI.getAllStories();
+    const responseStoryTask = await atResources.getAllStories();
     if (responseStoryTask === null || responseStoryTask === undefined){
       req.flash("error_msg", "Service unavailable");
     } else {
@@ -31,7 +28,7 @@ rscCtrl.dashboard = async (req, res) => {
 //     "description": "Task AT: Not Data"
 //   }];
 //   try{
-//     const responseStoryTask = await ssoServiceAPI.getAllStories();
+//     const responseStoryTask = await atResources.getAllStories();
 //     if (responseStoryTask === null || responseStoryTask === undefined){
 //       req.flash("error_msg", "Service unavailable");
 //     } else {

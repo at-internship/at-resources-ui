@@ -1,6 +1,6 @@
 <div class="col-md-4 mx-auto">
 
-    {{#each userErrors}}
+    {{#each storyErrors}}
     <div class="alert alert-danger alert-dismissible fade show" role="alert">
         {{text}}
         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -14,61 +14,80 @@
             <h3>Edit Story</h3>
         </div>
         <div class="card-body">
-            <!--<form action="/admin/story/edit/{{user._id}}?_method=PUT" method="POST">-->
-            <form action="/admin/story/edit/5f6c27a8d2b353a9147b78d0?_method=PUT" method="POST">
+            <form action="/admin/story/edit/{{id}}?_method=PUT" method="POST">
                 <input type="hidden" name="_method" value="PUT">
                 <div class="form-group">
-                    <label for="priority">Priority:</label>
-                    <select name="priority" id="priority" class="form-control">
-                        <option value="">- select - </option>
-                        <option value="1">1 - High</option>
-                        <option value="2">2 - Medium</option>
-                        <option value="3">3 - Low</option>
+                    <label for="story_sprintId">Sprint:</label>
+                    <select required class="form-control" name="story_sprintId" id="story_sprintId">
+                        <option {{ selected sprintId "5fb42492a62def1daaa62a27" }} value="5fb42492a62def1daaa62a27">Sprint 1</option>
+                        <option {{ selected sprintId "5fb42492a62def1daaa62a28" }} value="5fb42492a62def1daaa62a28">Sprint 2</option>
+                        <option {{ selected sprintId "5fb42492a62def1daaa62a29" }} value="5fb42492a62def1daaa62a29">Sprint 3</option>
+                        <option {{ selected sprintId "5fb42492a62def1daaa62a30" }} value="5fb42492a62def1daaa62a30">Sprint 4</option>
+                        <option {{ selected sprintId "5fb42492a62def1daaa62a31" }} value="5fb42492a62def1daaa62a31">Sprint 5</option>
+                        <option {{ selected sprintId "5fb42492a62def1daaa62a32" }} value="5fb42492a62def1daaa62a32">Sprint 6</option>
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="name">Name:</label>
-                    <input type="text" name="name" id="name" class="form-control" placeholder="Type the Name" autofocus />
-                </div>
-                <div class="form-group">
-                    <label for="description">Description:</label>
-                    <input type="text" name="description" id="description" class="form-control" placeholder="Type the Description" />
-                </div>
-                <div class="form-group">
-                    <label for="aceptance_criteria">Aceptance criteria:</label>
-                    <input type="text" name="aceptance_criteria" id="aceptance_criteria" class="form-control" placeholder="Type the Aceptance Criteria" />
-                </div>
-                <div class="form-group">
-                    <label for="story_points">Story Points:</label>
-                    <select name="story_points" id="story_points" class="form-control">
-                        <option value="">- select - </option>
-                        <option value="1">1</option>
-                        <option value="2">3</option>
-                        <option value="3">5</option>
+                    <label for="story_userId">User:</label>
+                    <select required class="form-control" name="story_userId" id="story_userId">
+                        <option {{ selected userId "5fb42492a62def1daaa62a27" }} value="5fb42492a62def1daaa62a27">User 1</option>
+                        <option {{ selected userId "5fb42492a62def1daaa62a28" }} value="5fb42492a62def1daaa62a28">User 2</option>
+                        <option {{ selected userId "5fb42492a62def1daaa62a29" }} value="5fb42492a62def1daaa62a29">User 3</option>
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="progress">Progress:</label>
-                    <input type="number" name="progress" id="progress" class="form-control" placeholder="Type the Progress" />
-                </div>  
-                <div class="form-group">
-                    <label for="start_date">Start Date:</label>
-                    <input type="date" id="start_date" name="start_date" value="aaaa-mm-dd" min="2018-01-01" max="2021-12-31">
-                </div>       
-                <div class="form-group">
-                    <label for="start_date">Due Date:</label>
-                    <input type="date" id="due_date" name="due_date" value="aaaa-mm-dd" min="2018-01-01" max="2021-12-31">
+                    <label for="story_priority">Priority:</label>
+                    <select required class="form-control" name="story_priority" id="story_priority">
+                        <option {{ selected priority "HIGH" }} value="High">High</option>
+                        <option {{ selected priority "MEDIUM" }} value="Medium">Medium</option>
+                        <option {{ selected priority "LOW" }} value="Low">Low</option>
+                    </select>
                 </div>
                 <div class="form-group">
-                    <label for="start_date">Create Date:</label>
-                    <input type="date" id="create_date" name="create_date" value="aaaa-mm-dd" min="2018-01-01" max="2021-12-31">
+                    <label for="story_name">Name:</label>
+                    <input type="text" id="story_name" name="story_name" required class="form-control"
+                        placeholder="Name" value='{{ name }}' />
                 </div>
                 <div class="form-group">
-                    <label for="status">Status:</label>
-                    <select name="status" id="status" class="form-control">
-                        <option value="">- select - </option>
-                        <option value="1">0</option>
-                        <option value="2">1</option>
+                    <label for="story_description">Description:</label>
+                    <textarea id="story_description" name="story_description" required class="form-control"
+                        placeholder="Description">{{ description }}</textarea>
+                </div>
+                <div class="form-group">
+                    <label for="story_acceptanceCriteria">Acceptance Criteria:</label>
+                    <textarea id="story_acceptanceCriteria" name="story_acceptanceCriteria" required
+                        class="form-control" placeholder="Aceptance Criteria">{{ acceptanceCriteria }}</textarea>
+                </div>
+                <div class="form-group">
+                    <label for="story_storyPoints">Story Points:</label>
+                    <select required class="form-control" name="story_storyPoints" id="story_storyPoints">
+                        <option {{ selected storyPoints "1" }} value="1">1</option>
+                        <option {{ selected storyPoints "2" }} value="2">2</option>
+                        <option {{ selected storyPoints "3" }} value="3">3</option>
+                        <option {{ selected storyPoints "5" }} value="5">5</option>
+                        <option {{ selected storyPoints "8" }} value="8">8</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="story_progress">Progress:</label>
+                    <input type="text" id="story_progress" name="story_progress" required class="form-control"
+                        placeholder="Progress" value="{{ progress }}" />
+                </div>
+                <div class="form-group">
+                    <label for="story_startDate">Start Date:</label>
+                    <input type="date" id="story_startDate" name="story_startDate" value="{{ startDate }}" min="2015-01-01"
+                        max="2040-12-31" />
+                </div>
+                <div class="form-group">
+                    <label for="story_dueDate">Due Date:</label>
+                    <input type="date" id="story_dueDate" name="story_dueDate" value="{{ dueDate }}" min="2015-01-01"
+                        max="2040-12-31" />
+                </div>
+                <div class="form-group">
+                    <label for="story_status">Status:</label>
+                    <select name="story_status" id="story_status" class="form-control">
+                        <option {{ selected status "1" }} value="1">Active</option>
+                        <option {{ selected status "0" }} value="0">Inactive</option>
                     </select>
                 </div>
                 <div class="form-group">

@@ -1,114 +1,102 @@
 <div class="row justify-content-center mt-5">
     <div class="col-md-4 my-auto">
-        <div class="card text-center">
+
+        {{#each storyErrors}}
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            {{text}}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        {{/each}}
+
+        <div class="card text-left">
             <div class="card-header">
                 <h3>New Story</h3>
-                <!-- BOOTSTRAP - BOOTSWATCH THEME - COSMOS -->
-                <link rel="stylesheet"
-                    href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/materia/bootstrap.min.css">
-                <!-- FONT AWESOME -->
-                <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
-                    integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
-                    crossorigin="anonymous">
             </div>
-
             <div class="card-body">
                 <form class="form-horizontal" action="/admin/story/add" method="POST">
                     <div class="form-group">
-                        <label for="category">SELECT SPRINT</label>
-                        <select required class="form-control" name="category" id="category">
-                            <option value="co">Choose an option</option>
-                            <option value="Sprint1">Sprint 1</option>
-                            <option value="Sprint2">Sprint 2</option>
-                            <option value="Sprint3">Sprint 3</option>
-                            <option value="Sprint4">Sprint 4</option>
-                            <option value="Sprint5">Sprint 5</option>
-                            <option value="Sprint6">Sprint 6</option>
+                        <label for="story_sprintId">SELECT SPRINT</label>
+                        <select required class="form-control" name="story_sprintId" id="story_sprintId">
+                            <option value="">Choose an option</option>
+                            <option value="5fb42492a62def1daaa62a27">Sprint 1</option>
+                            <option value="5fb42492a62def1daaa62a28">Sprint 2</option>
+                            <option value="5fb42492a62def1daaa62a29">Sprint 3</option>
+                            <option value="5fb42492a62def1daaa62a30">Sprint 4</option>
+                            <option value="5fb42492a62def1daaa62a31">Sprint 5</option>
+                            <option value="5fb42492a62def1daaa62a32">Sprint 6</option>
                         </select>
                     </div>
-                </form>
-            </div>
-
-            <div class="card-body">
-                <form class="form-horizontal" action="/admin/story/add" method="POST">
                     <div class="form-group">
-                        <label for="category">SELECT USER</label>
-                        <select required class="form-control" name="category" id="category">
-                            <option value="co">Choose an option</option>
-                            <option value="u1">User 1</option>
-                            <option value="u2">User 2</option>
-                            <option value="u3">User 3</option>
+                        <label for="story_userId">SELECT USER</label>
+                        <select required class="form-control" name="story_userId" id="story_userId">
+                            <option value="">Choose an option</option>
+                            <option value="5fb42492a62def1daaa62a27">User 1</option>
+                            <option value="5fb42492a62def1daaa62a28">User 2</option>
+                            <option value="5fb42492a62def1daaa62a29">User 3</option>
                         </select>
                     </div>
-                </form>
-            </div>
-
-            <div class="card-body">
-                <form class="form-horizontal" action="/admin/story/add" method="POST">
                     <div class="form-group">
-                        <label for="category">SELECT PRIORITY</label>
-                        <select required class="form-control" name="category" id="category">
-                            <option value="co">Choose an option</option>
-                            <option value="high">High</option>
-                            <option value="medium">Medium</option>
-                            <option value="low">Low</option>
+                        <label for="story_priority">SELECT PRIORITY</label>
+                        <select required class="form-control" name="story_priority" id="story_priority">
+                            <option value="">Choose an option</option>
+                            <option value="High">High</option>
+                            <option value="Medium">Medium</option>
+                            <option value="Low">Low</option>
                         </select>
                     </div>
-                </form>
-            </div>
-
-            <div class="card-body">
-
-                <div class="form-group">
-                    <input type="text" name="name" required class="form-control" placeholder="Name" autofocus />
-                </div>
-
-                <div class="form-group">
-                    <textarea name="description" required class="form-control" placeholder="Description"></textarea>
-                </div>
-
-                <div class="form-group">
-                    <textarea name="ac" required class="form-control" placeholder="Aceptance Criteria"></textarea>
-                </div>
-
-            </div>
-
-            <div class="card-body">
-                <form class="form-horizontal" action="/admin/story/add" method="POST">
                     <div class="form-group">
-                        <label for="category">STORY POINTS</label>
-                        <select required class="form-control" name="category" id="category">
-                            <option value="co">Choose an option</option>
-                            <option value="one">1</option>
-                            <option value="three">3</option>
-                            <option value="five">5</option>
+                        <input type="text" id="story_name" name="story_name" required class="form-control" placeholder="Name" />
+                    </div>
+                    <div class="form-group">
+                        <textarea id="story_description" name="story_description" required class="form-control"
+                            placeholder="Description"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="story_acceptanceCriteria" name="story_acceptanceCriteria" required class="form-control"
+                            placeholder="Aceptance Criteria"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="story_storyPoints">STORY POINTS</label>
+                        <select required class="form-control" name="story_storyPoints" id="story_storyPoints">
+                            <option value="">Choose an option</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="5">5</option>
+                            <option value="8">8</option>
                         </select>
                     </div>
+                    <div class="form-group">
+                        <input type="text" id="story_progress" name="story_progress" required class="form-control"
+                            placeholder="Progress" />
+                    </div>
+                    <div class="form-group">
+                        <label for="story_startDate">Start Date:</label>
+                        <input type="date" id="story_startDate" name="story_startDate" value="2020-01-01" min="2015-01-01"
+                            max="2040-12-31" />
+                    </div>
+                    <div class="form-group">
+                        <label for="story_dueDate">Due Date:</label>
+                        <input type="date" id="story_dueDate" name="story_dueDate" value="2020-01-01" min="2015-01-01"
+                            max="2040-12-31" />
+                    </div>
+                    <div class="form-group">
+                        <label for="story_status">Status:</label>
+                        <select name="story_status" id="story_status" class="form-control">
+                            <option value="">- select -</option>
+                            <option value="1">Active</option>
+                            <option value="0">Inactive</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-primary btn-block" type="submit">
+                            Save
+                        </button>
+                    </div>
                 </form>
-            </div>
-
-            <div class="card-body">
-                <label for="start">Start Date:</label>
-
-                <input type="date" id="start" name="trip-start" value="2020-01-01" min="2015-01-01" max="2040-12-31">
-
-                <br>
-                <br>
-
-                <label for="start">Due Date:</label>
-
-                <input type="date" id="start" name="trip-start" value="2020-01-01" min="2015-01-01" max="2040-12-31">
-
-                <br>
-                <br>
-
-                <div class="form-group">
-                    <button class="btn btn-primary btn-block" type="submit">
-                        Save
-                    </button>
-                </div>
             </div>
         </div>
-
     </div>
 </div>

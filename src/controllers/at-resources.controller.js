@@ -1,3 +1,4 @@
+
 const atResources = require("../services/at-resources-api.service");
 
 const rscCtrl = {};
@@ -52,19 +53,21 @@ rscCtrl.metrics = async (req, res) => {
 //-----------SPRINT-----------//
 
 // AT-RESOURCES - Render Sprint
-rscCtrl.sprint = (req, res) => {
-  res.render("sprint");
-  atResources.getAllStories = () => {
-    return axios({
-      method: "GET",
-      url: AT_RESOURCES_SERVICE_URI + `/v1/story`,
-      headers: {
-        "content-type": "application/json",
-      },
-    }).catch(function (error) {
-      console.log("Error: " + error.message);
-    });
-  };
+rscCtrl.sprint = async (req, res) => {
+  let stories = [];
+try{
+    const responseStoryList = await atResources.getAllStories();
+    if (responseStoryList === null || responseStoryList === undefined){
+        req.flash("error_msg", "Service unavailable");
+    } else {
+        console.log("--> adminCtrl.renderStoryList");
+        stories = responseStoryList.data;
+    }
+} catch(err) {
+    console.error(err.message);
+} finally {
+    res.render("admin/story/index", { stories});
+}
 };
 
 

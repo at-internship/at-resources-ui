@@ -3,12 +3,47 @@ const atResources = require("../services/at-resources-api.service");
 
 const rscCtrl = {};
 
+// MICROSERVICE - HEROKU - SSO
+const ssoServiceAPI = require("../services/at-sso-api.service");
+
 // AT-RESOURCES - Index/Dashboard
 rscCtrl.dashboard = async (req, res) => {
-  console.log("--> rscCtrl.dashboard");
-  res.render("dashboard");
+  let storyTask = [];
+  try{
+    const responseStoryTask = await ssoServiceAPI.getAllStories();
+    if (responseStoryTask === null || responseStoryTask === undefined){
+      req.flash("error_msg", "Service unavailable");
+    } else {
+      console.log("--> rscCtrl.dashboard");
+      storyTask = responseStoryTask.data;
+    }
+  } catch (err) {
+    console.error(err.message);
+  } finally {
+    res.render("dashboard", { storyTask });
+  }
 };
 
+// AT-RESOURCES - Index/Dashboard - Story/Task - List
+// rscCtrl.storyTask = async (req, res) => {
+//   const storyTask = [{
+//     "name" : "Task AT-#: Not Data",
+//     "description": "Task AT: Not Data"
+//   }];
+//   try{
+//     const responseStoryTask = await ssoServiceAPI.getAllStories();
+//     if (responseStoryTask === null || responseStoryTask === undefined){
+//       req.flash("error_msg", "Service unavailable");
+//     } else {
+//       console.log("--> rscCtrl.dashboard");
+//       storyTask = responseStoryTask.data;
+//     }
+//   } catch (err) {
+//     console.error(err.message);
+//   } finally {
+//     res.render("dashboard", {storyTask});
+//   }
+// };
 //---------------------------------------
 
 // AT-RESOURCES - Task - Render Add Task Form

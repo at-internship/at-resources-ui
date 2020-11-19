@@ -31,6 +31,14 @@ app.engine(
                 if (a == undefined) return "";
                 return a == b ? "selected" : "";
             },
+            statusHelper: function(a) {
+                if (a == undefined) return "";
+                return a == 1 ? "Active" : "Inactive";
+            },
+            statusButtonHelper: function(a) {
+                if (a == undefined) return "";
+                return a == 1 ? "btn-success" : "btn-secondary";
+            },
         },
     })
 );

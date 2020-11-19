@@ -4,21 +4,17 @@ const path = require("path");
 
 // AT-RESOURCES - Controller
 const {
-  dashboard,
-  renderAddTaskForm,
-  addTask,
-  renderEditTaskForm,
-  updateTask,
-  sprint,
-  renderAddSprintForm,
-  addSprint,
-  renderEditSprintForm,
-  updateSprint,
-  backlog,
-  mentors,
-  metrics,
-  renderMembersList,
-  renderTeamList,
+    dashboard,
+    sprint,
+    renderAddSprintForm,
+    addSprint,
+    renderEditSprintForm,
+    updateSprint,
+    backlog,
+    mentors,
+    metrics,
+    renderMembersList,
+    renderTeamList,
 } = require("../controllers/at-resources.controller");
 
 // Helpers
@@ -32,17 +28,6 @@ router.get("/", dashboard);
 // AT-RESOURCES - Dashboard
 router.get("/dashboard", dashboard);
 
-// AT-RESOURCES - renderAddTaskForm
-router.get("/task/add", renderAddTaskForm);
-
-// AT-RESOURCES - addTask
-router.post("/task/add", addTask);
-
-// AT-RESOURCES - renderEditTaskForm
-router.get("/task/edit/:id", renderEditTaskForm);
-
-// AT-RESOURCES - updateTask
-router.put("/task/edit/:id", updateTask);
 
 //-----------SPRINT-----------//
 
@@ -60,6 +45,7 @@ router.get("/sprint/edit/:id", renderEditSprintForm);
 
 // AT-RESOURCES - Update sprint
 router.put("/sprint/edit/:id", updateSprint);
+
 
 //---------METRICS----------//
 
@@ -85,7 +71,5 @@ router.get("/teams", renderTeamList);
 
 // AT-RESOURCES - MEMBERS
 router.get("/members", renderMembersList);
-
-
 
 module.exports = router;

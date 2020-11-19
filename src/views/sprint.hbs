@@ -61,7 +61,10 @@
                                                             <td>{{name}}</td>
                                                             <td>Mentor 1</td>
                                                             <td>Team 1</td>
-                                                            <td><a href="#" class="btn btn-success btn-sm">Done</a></td>
+                                                            <td><a href="#" class="btn {{ statusButtonHelper status }} btn-sm">
+                                                                {{ statusHelper status }}
+                                                                </a>
+                                                            </td>
                                                             <td><a href="#" class="btn btn-secondary btn-sm">Unapproved</a>
                                                             </td>
                                                             <td>{{dueDate}}</td>

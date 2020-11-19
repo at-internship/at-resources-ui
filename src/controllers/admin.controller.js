@@ -1,7 +1,7 @@
 const adminCtrl = {};
 
 // MICROSERVICE - HEROKU - SSO
-const atResources = require("../services/at-resources-api.service");
+const atResourcesAPI = require("../services/at-resources-api.service");
 
 // AT-RESOURCES - Admin - Index
 adminCtrl.renderIndexAdmin = async(req, res) => {
@@ -13,7 +13,7 @@ adminCtrl.renderIndexAdmin = async(req, res) => {
 adminCtrl.renderStoryList = async(req, res) => {
     let stories = [];
     try {
-        const responseStoryList = await atResources.getAllStories();
+        const responseStoryList = await atResourcesAPI.getAllStories();
         if (responseStoryList === null || responseStoryList === undefined) {
             req.flash("error_msg", "Service unavailable");
         } else {
@@ -67,7 +67,7 @@ adminCtrl.addStory = async(req, res) => {
             createDate: new Date(),
             status: parseInt(story_status)
         };
-        await atResources.addStory(request).then(result => {
+        await atResourcesAPI.addStory(request).then(result => {
             console.log(result);
         });
 
@@ -88,11 +88,11 @@ adminCtrl.renderEditStoryForm = async(req, res) => {
     //res.render("admin/story/edit-story");
 
     let storyId = req.params.id;
-    atResources.getStoryById(storyId);
+    atResourcesAPI.getStoryById(storyId);
 
     // Temporary code to retrive information about the course
 
-    let responseStories = await atResources.getAllStories();
+    let responseStories = await atResourcesAPI.getAllStories();
 
     storyDetails = responseStories.data.filter(function(c) { return c.id == storyId; });
 
@@ -207,7 +207,7 @@ adminCtrl.updateStory = async(req, res) => {
                 createDate: new Date(),
                 status: parseInt(story_status),
             };
-            await atResources.updateStory(request, story_id).then(result => {
+            await atResourcesAPI.updateStory(request, story_id).then(result => {
                 console.log(result);
             });
 
@@ -233,7 +233,7 @@ adminCtrl.deleteStory = async(req, res) => {
         const errors = [];
 
         let storyId = req.params.id;
-        atResources.deleteStory(storyId);
+        atResourcesAPI.deleteStory(storyId);
 
         // Redirect
         req.flash("success_msg", "Story Deleted Successfully");

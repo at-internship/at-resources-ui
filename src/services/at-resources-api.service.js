@@ -8,9 +8,9 @@ const axios = require("axios");
 const AT_RESOURCES_SERVICE_URI = process.env.AT_RESOURCES_SERVICE_URI;
 console.log("AT_RESOURCES_SERVICE_URI: " + AT_RESOURCES_SERVICE_URI);
 
-const atResources = {};
+const atResourcesAPI = {};
 
-atResources.getAllStories = () => {
+atResourcesAPI.getAllStories = () => {
     return axios({
         method: "GET",
         url: AT_RESOURCES_SERVICE_URI + `/v1/story`,
@@ -22,11 +22,11 @@ atResources.getAllStories = () => {
     });
 };
 
-atResources.getStoryById = (id) => {
+atResourcesAPI.getStoryById = (id) => {
     return {};
 }
 
-atResources.addStory = (data) => {
+atResourcesAPI.addStory = (data) => {
     return axios({
         method: "POST",
         url: AT_RESOURCES_SERVICE_URI + `/v1/story`,
@@ -37,7 +37,7 @@ atResources.addStory = (data) => {
     })
 };
 
-atResources.updateStory = (data, id) => {
+atResourcesAPI.updateStory = (data, id) => {
     return axios({
         method: "PUT",
         url: AT_RESOURCES_SERVICE_URI + `/v1/story/` + id,
@@ -48,7 +48,7 @@ atResources.updateStory = (data, id) => {
     })
 };
 
-atResources.deleteStory = (id) => {
+atResourcesAPI.deleteStory = (id) => {
     return axios({
         method: "DELETE",
         url: AT_RESOURCES_SERVICE_URI + `/v1/story/` + id,
@@ -60,7 +60,7 @@ atResources.deleteStory = (id) => {
 };
 
 
-atResources.deleteStory = (id) => {
+atResourcesAPI.deleteStory = (id) => {
     return axios({
         method: "DELETE",
         url: AT_RESOURCES_SERVICE_URI + `/v1/story/` + id,
@@ -71,4 +71,4 @@ atResources.deleteStory = (id) => {
     })
 };
 
-module.exports = atResources;
+module.exports = atResourcesAPI;

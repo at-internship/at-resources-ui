@@ -71,5 +71,4 @@ atResources.deleteStory = (id) => {
     })
 };
 
-
 module.exports = atResources;

@@ -1,5 +1,7 @@
 # Nodejs
 node_modules
+
+# Code Coverage
 .nyc_output
 coverage
 
@@ -8,3 +10,4 @@ package-lock.json
 
 # environment variables
 .env
+

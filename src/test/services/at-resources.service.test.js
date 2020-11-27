@@ -1,8 +1,8 @@
 /**
- * AT UI MOCKS - AT University Service API Test.
+ * AT RESOURCES UI - AT Resources Service API Test.
  * Copyright 2020 AgileThought, Inc.
  * 
- * Integration Test for at-university-api endpoint.
+ * Integration Test for at-resources-api endpoint.
  * 
  * @author @at-internship
  * @version 1.0
@@ -14,7 +14,7 @@ const chaiHttp = require('chai-http');
 const expect = require('chai').expect;
 chai.use(chaiHttp);
 
-// AT University Service API
+// AT Resources Service API
 const resourcesServiceAPI= 'https://at-resources-api.herokuapp.com/api' + '/v1/story';
 const resourcesServiceAPI_400 = 'https://at-resources-api.herokuapp.com/api' + '/v1/stories';
 
@@ -33,7 +33,7 @@ describe('INTEGRATION TEST: at-resources.service', () => {
             });
     });
 
-    it('Should Fail Get All Courses - 400', (done) => {
+    it('Should Fail Get All Stories - 400', (done) => {
         chai.request(resourcesServiceAPI_400)
             .get('/')
             .end(function(err, res) {

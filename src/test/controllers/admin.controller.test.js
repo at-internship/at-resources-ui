@@ -1,5 +1,5 @@
 /**
- * AT UNIVERSITY UI - AT Admin Controller Test.
+ * AT RESOURCES UI - AT Admin Controller Test.
  * Copyright 2020 AgileThought, Inc.
  * 
  * Unit Test for admin-controller.
@@ -13,7 +13,7 @@ const sinon = require("sinon");
 const expect = require("chai").expect;
 
 // AT Admin Controller
-const adminC = require("../../controllers/admin.controller");
+const adminController = require("../../controllers/admin.controller");
 
 // AT Resources Service API
 const resourcesServiceAPI = require("../../services/at-resources-api.service");
@@ -32,7 +32,7 @@ describe("Admin Test Controller", function() {
     it("Should render admin dashboard", function(done) {
         var res = { render: sinon.spy() };
         var req = {};
-        var view = adminC.renderIndexAdmin(req, res).then(function() {
+        var view = adminController.renderIndexAdmin(req, res).then(function() {
             expect(res.render.calledOnce).to.be.true;
             done();
         });
@@ -43,7 +43,7 @@ describe("Admin Test Controller", function() {
         var req = {};
         var stories = [];
         getAllStoriesStub.returns(Promise.resolve(stories));
-        var view = adminC.renderStoryList(req, res).then(function() {
+        var view = adminController.renderStoryList(req, res).then(function() {
             expect(res.render.calledOnce).to.be.true;
             done();
         });

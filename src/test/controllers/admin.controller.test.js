@@ -29,6 +29,7 @@ describe("Admin Test Controller", function() {
         getAllStoriesStub.restore();
     });
 
+    // AT-RESOURCES - Admin - Index
     it("Should render admin dashboard", function(done) {
         var res = { render: sinon.spy() };
         var req = {};
@@ -38,6 +39,7 @@ describe("Admin Test Controller", function() {
         });
     });
 
+    // AT-RESOURCES - Admin - Story list
     it("Should render admin story list view", function(done) {
         var res = { render: sinon.spy() };
         var req = {};
@@ -48,7 +50,8 @@ describe("Admin Test Controller", function() {
             done();
         });
     });
-    
+
+    // AT-RESOURCES - Admin - Render Add Story Form
     it("Should render add story form", function(done) {
         var res = { render: sinon.spy() };
         var req = {};
@@ -58,7 +61,7 @@ describe("Admin Test Controller", function() {
         });
     });
 
-    
+    // AT-RESOURCES - Admin - Render Edit Story Form
     it("Should render edit story form", function(done) {
         var res = { render: sinon.spy() };
         var req = {};

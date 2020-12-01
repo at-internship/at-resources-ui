@@ -1,3 +1,4 @@
+// AT Admin Controller
 const adminCtrl = {};
 
 // MICROSERVICE - HEROKU - SSO
@@ -28,7 +29,7 @@ adminCtrl.renderStoryList = async(req, res) => {
 };
 
 // AT-RESOURCES - Admin - Render Add Story Form
-adminCtrl.renderAddStoryForm = (req, res) => {
+adminCtrl.renderAddStoryForm = async(req, res) => {
     res.render("admin/story/add-story");
 };
 

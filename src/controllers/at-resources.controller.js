@@ -1,17 +1,20 @@
-const rscCtrl = {};
+// AT Resources Controller
+const atResourcesController = {};
 
 // MICROSERVICE - HEROKU - SSO
 const atResourcesAPI = require("../services/at-resources-api.service");
 
+//-----------DASHBOARD-----------//
 // AT-RESOURCES - Index/Dashboard
-rscCtrl.dashboard = async(req, res) => {
+atResourcesController.dashboard = async(req, res) => {
+    console.log("--> atResourcesController.dashboard");
+
     let storyTask = [];
     try {
         const responseStoryTask = await atResourcesAPI.getAllStories();
         if (responseStoryTask === null || responseStoryTask === undefined) {
             req.flash("error_msg", "Service unavailable");
         } else {
-            console.log("--> rscCtrl.dashboard");
             storyTask = responseStoryTask.data;
         }
     } catch (err) {
@@ -20,26 +23,27 @@ rscCtrl.dashboard = async(req, res) => {
         res.render("dashboard", { storyTask });
     }
 };
+//-----------DASHBOARD-----------//
 
-//-----------TEAMS-----------//
-
-// AT-RESOURCES - TEAMS
-rscCtrl.renderTeamList = (req, res) => {
-    //console.log("--> rscCtrl.renderTeamList");
-    res.render("teams");
+//-----------BACKLOG-----------//
+// AT-RESOURCES - Render Backlog
+atResourcesController.backlog = async(req, res) => {
+    console.log("--> atResourcesController.backlog");
+    res.render("backlog");
 };
+//-----------BACKLOG-----------//
 
 //-----------SPRINT-----------//
-
 // AT-RESOURCES - Render Sprint
-rscCtrl.sprint = async(req, res) => {
+atResourcesController.sprint = async(req, res) => {
+    console.log("--> atResourcesController.sprint");
+
     let stories = [];
     try {
         const responseStoryList = await atResourcesAPI.getAllStories();
         if (responseStoryList === null || responseStoryList === undefined) {
             req.flash("error_msg", "Service unavailable");
         } else {
-            console.log("--> adminCtrl.renderStoryList");
             stories = responseStoryList.data;
         }
     } catch (err) {
@@ -48,57 +52,38 @@ rscCtrl.sprint = async(req, res) => {
         res.render("sprint", { stories });
     }
 };
-
-// AT-RESOURCES - Render addSprint
-rscCtrl.renderAddSprintForm = (req, res) => {
-    res.render("/sprint/add");
-};
-
-// AT-RESOURCES - AddSprint
-rscCtrl.addSprint = (req, res) => {
-    //res.render("/sprint/add");
-    console.log("Method addSprint");
-};
-
-// AT-RESOURCES - Render editSprint
-rscCtrl.renderEditSprintForm = (req, res) => {
-    // res.render("/sprint/edit/:id");
-    console.log("Method editSprint");
-};
-
-// AT-RESOURCES - Update sprint
-rscCtrl.updateSprint = (req, res) => {
-    res.render("/sprint/edit/:id");
-};
-
-//-----------BACKLOG-----------//
-
-// AT-RESOURCES - Render Backlog
-rscCtrl.backlog = async(req, res) => {
-    console.log("--> rscCtrl.renderBacklog");
-    res.render("backlog");
-};
-
-//-----------MENTORS-----------//
-
-// AT-RESOURCES - Render Mentors
-rscCtrl.mentors = (req, res) => {
-    res.render("mentors");
-};
+//-----------SPRINT-----------//
 
 //-----------MEMBERS-----------//
-
-// AT-RESOURCES - MEMBERS
-rscCtrl.renderMembersList = (req, res) => {
+// AT-RESOURCES - Render Members
+atResourcesController.members = async(req, res) => {
+    console.log("--> atResourcesController.members");
     res.render("members");
 };
+//-----------MEMBERS-----------//
+
+//-----------TEAMS-----------//
+// AT-RESOURCES - Render Teams
+atResourcesController.teams = async(req, res) => {
+    console.log("--> atResourcesController.teams");
+    res.render("teams");
+};
+//-----------TEAMS-----------//
+
+//-----------MENTORS-----------//
+// AT-RESOURCES - Render Mentors
+atResourcesController.mentors = async(req, res) => {
+    console.log("--> atResourcesController.mentors");
+    res.render("mentors");
+};
+//-----------MENTORS-----------//
 
 //-----------METRICS------------//
-
 // AT-RESOURCES - Render Metrics
-rscCtrl.metrics = async(req, res) => {
-    //console.log("--> rscCtrl.renderMetrics");
+atResourcesController.metrics = async(req, res) => {
+    console.log("--> atResourcesController.metrics");
     res.render("metrics");
 };
+//-----------METRICS------------//
 
-module.exports = rscCtrl;
+module.exports = atResourcesController;

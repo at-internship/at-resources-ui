@@ -48,4 +48,24 @@ describe("Admin Test Controller", function() {
             done();
         });
     });
+    
+    it("Should render add story form", function(done) {
+        var res = { render: sinon.spy() };
+        var req = {};
+        var view = adminController.renderAddStoryForm(req, res).then(function() {
+            expect(res.render.calledOnce).to.be.true;
+            done();
+        });
+    });
+
+    
+    it("Should render edit story form", function(done) {
+        var res = { render: sinon.spy() };
+        var req = {};
+        var stories = [];
+        var view = adminController.renderEditStoryForm(req, res).then(function() {
+            expect(res.render.calledOnce).to.be.true;
+            done();
+        });
+    });
 });

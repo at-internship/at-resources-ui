@@ -5,12 +5,12 @@ const axios = require("axios");
 //const AT_RESOURCES_SERVICE_URI = process.env.AT_RESOURCES_SERVICE_URI || `https://at-resources-api.herokuapp.com/api`;
 
 // PROD
-const AT_RESOURCES_SERVICE_URI = process.env.AT_RESOURCES_SERVICE_URI;
+const AT_RESOURCES_SERVICE_URI = process.env.AT_RESOURCES_SERVICE_URI || `https://at-resources-api.herokuapp.com/api`;
 console.log("AT_RESOURCES_SERVICE_URI: " + AT_RESOURCES_SERVICE_URI);
 
 const atResourcesAPI = {};
 
-atResourcesAPI.getAllStories = () => {
+/*atResourcesAPI.getAllStories = () => {
     return axios({
         method: "GET",
         url: AT_RESOURCES_SERVICE_URI + `/v1/story`,
@@ -20,10 +20,19 @@ atResourcesAPI.getAllStories = () => {
     }).catch(function(error) {
         console.log("Error: " + error.message);
     });
+};*/
+atResourcesAPI.getAllStories = () => {
+    return axios
+        .get(AT_RESOURCES_SERVICE_URI + `/v1/story`)
+        .then(res => res.data)
+        .catch(error => console.log(error));
 };
 
 atResourcesAPI.getStoryById = (id) => {
-    return {};
+    return axios
+        .get(AT_RESOURCES_SERVICE_URI + `/v1/story`)
+        .then(res => res.data)
+        .catch(error => console.log(error));
 }
 
 atResourcesAPI.addStory = (data) => {
@@ -52,7 +61,6 @@ atResourcesAPI.deleteStory = (id) => {
     return axios({
         method: "DELETE",
         url: AT_RESOURCES_SERVICE_URI + `/v1/story/` + id,
-        data: {},
         headers: {
             "content-type": "application/json",
         },

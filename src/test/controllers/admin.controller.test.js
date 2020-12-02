@@ -61,12 +61,41 @@ describe("Admin Test Controller", function() {
         });
     });
 
+    // AT-RESOURCES - Admin - Add Story
+    it("Should add story operation", function(done) {
+        var res = { render: sinon.spy() };
+        var req = {};
+        var view = adminController.addStory(req, res).then(function() {
+            expect(res.render.calledOnce).to.be.true;
+            done();
+        });
+    });
+
     // AT-RESOURCES - Admin - Render Edit Story Form
     it("Should render edit story form", function(done) {
         var res = { render: sinon.spy() };
         var req = {};
-        var stories = [];
         var view = adminController.renderEditStoryForm(req, res).then(function() {
+            expect(res.render.calledOnce).to.be.true;
+            done();
+        });
+    });
+
+    // AT-RESOURCES - Admin - Edit Story
+    it("Should update story operation", function(done) {
+        var res = { render: sinon.spy() };
+        var req = {};
+        var view = adminController.updateStory(req, res).then(function() {
+            expect(res.render.calledOnce).to.be.true;
+            done();
+        });
+    });
+
+    // AT-RESOURCES - Admin - Delete Story
+    it("Should delete story operation", function(done) {
+        var res = { render: sinon.spy() };
+        var req = {};
+        var view = adminController.deleteStory(req, res).then(function() {
             expect(res.render.calledOnce).to.be.true;
             done();
         });

@@ -59,16 +59,4 @@ atResourcesAPI.deleteStory = (id) => {
     })
 };
 
-
-atResourcesAPI.deleteStory = (id) => {
-    return axios({
-        method: "DELETE",
-        url: AT_RESOURCES_SERVICE_URI + `/v1/story/` + id,
-        data: {},
-        headers: {
-            "content-type": "application/json",
-        },
-    })
-};
-
 module.exports = atResourcesAPI;

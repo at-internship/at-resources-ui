@@ -1,3 +1,13 @@
+/**
+ * AT RESOURCES UI - AT Admin Controller.
+ * Copyright 2020 AgileThought, Inc.
+ *
+ * General functions for at-admin-controller.
+ *
+ * @author @at-internship
+ * @version 1.0
+ */
+
 // AT Admin Controller
 const adminCtrl = {};
 

@@ -2,7 +2,7 @@
  * AT RESOURCES UI - AT Resources Service API Test.
  * Copyright 2020 AgileThought, Inc.
  *
- * Test for at-resources-api endpoint.
+ * Test for at-resources-api.service endpoint.
  *
  * @author @at-internship
  * @version 1.0
@@ -21,7 +21,9 @@ const atResourcesAPI = require("../../services/at-resources-api.service");
 
 // Operations
 const getAllStories = atResourcesAPI.getAllStories;
+const getAllStories_error = atResourcesAPI.getAllStories;
 const getStoryById = atResourcesAPI.getStoryById;
+const getStoryById_error = atResourcesAPI.getStoryById;
 const addStory = atResourcesAPI.addStory;
 const updateStory = atResourcesAPI.updateStory;
 const deleteStory = atResourcesAPI.deleteStory;
@@ -47,6 +49,17 @@ const response = {
         "status": 1
     },
     status: 200
+};
+
+const response_error = {
+    body: {
+        "timestamp": "2020-12-02T17:46:32.409+00:00",
+        "status": 400,
+        "error": "Bad Request",
+        "message": "The priority field only accepts 3 values {High, Medium, Low}",
+        "path": "/story/"
+    },
+    status: 400
 };
 
 const data_add = {
@@ -111,6 +124,7 @@ describe("TEST: at-resources.service", () => {
 
     beforeEach(() => {
         nock("https://at-resources-api.herokuapp.com/api").get("/v1/story").reply(200, response);
+        nock("https://at-resources-api.herokuapp.com/api").get("/v1/story").reply(400, response_error);
         nock("https://at-resources-api.herokuapp.com/api").post("/v1/story").reply(200, response_add);
         nock("https://at-resources-api.herokuapp.com/api").put("/v1/story/1").reply(200, response_update);
         nock("https://at-resources-api.herokuapp.com/api").delete("/v1/story/1").reply(200, response_delete);
@@ -128,6 +142,18 @@ describe("TEST: at-resources.service", () => {
             });
     });
 
+    it("Should Get All Stories - error", () => {
+        return getAllStories_error()
+            .then(response_error => {
+                //console.log(response_error);
+
+                // Response Status
+                expect(response_error).equals(undefined);
+
+                // Response
+            });
+    });
+
     it("Should Get Story by id", () => {
         return getStoryById(1)
             .then(response => {
@@ -137,6 +163,18 @@ describe("TEST: at-resources.service", () => {
 
                 // Response
                 expect(response.data.body).to.have.property("id");
+            });
+    });
+
+    it("Should Get Story by id - error", () => {
+        return getStoryById_error(1)
+            .then(response_error => {
+                //console.log(response_error);
+
+                // Response Status
+                expect(response_error).equals(undefined);
+
+                // Response
             });
     });
 

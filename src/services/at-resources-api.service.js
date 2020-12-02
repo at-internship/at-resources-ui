@@ -1,4 +1,16 @@
+/**
+ * AT RESOURCES UI - AT Resources Service API.
+ * Copyright 2020 AgileThought, Inc.
+ *
+ * Functions for at-resources-api.service endpoint.
+ *
+ * @author @at-internship
+ * @version 1.0
+ */
+
+// Constants
 const axios = require("axios");
+const atResourcesAPI = {};
 
 // LOCAL
 //require("dotenv").config();
@@ -8,9 +20,7 @@ const axios = require("axios");
 const AT_RESOURCES_SERVICE_URI = process.env.AT_RESOURCES_SERVICE_URI || `https://at-resources-api.herokuapp.com/api`;
 console.log("AT_RESOURCES_SERVICE_URI: " + AT_RESOURCES_SERVICE_URI);
 
-const atResourcesAPI = {};
-
-/*atResourcesAPI.getAllStories = () => {
+atResourcesAPI.getAllStories = () => {
     return axios({
         method: "GET",
         url: AT_RESOURCES_SERVICE_URI + `/v1/story`,
@@ -20,19 +30,18 @@ const atResourcesAPI = {};
     }).catch(function(error) {
         console.log("Error: " + error.message);
     });
-};*/
-atResourcesAPI.getAllStories = () => {
-    return axios
-        .get(AT_RESOURCES_SERVICE_URI + `/v1/story`)
-        .then(res => res)
-        .catch(error => console.log(error));
 };
 
 atResourcesAPI.getStoryById = (id) => {
-    return axios
-        .get(AT_RESOURCES_SERVICE_URI + `/v1/story`)
-        .then(res => res)
-        .catch(error => console.log(error));
+    return axios({
+        method: "GET",
+        url: AT_RESOURCES_SERVICE_URI + `/v1/story`,
+        headers: {
+            "content-type": "application/json",
+        },
+    }).catch(function(error) {
+        console.log("Error: " + error.message);
+    });
 }
 
 atResourcesAPI.addStory = (data) => {

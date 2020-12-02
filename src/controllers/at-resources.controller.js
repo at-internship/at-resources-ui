@@ -1,3 +1,13 @@
+/**
+ * AT RESOURCES UI - AT Resources Controller.
+ * Copyright 2020 AgileThought, Inc.
+ *
+ * General functions for at-resources-controller.
+ *
+ * @author @at-internship
+ * @version 1.0
+ */
+
 // AT Resources Controller
 const atResourcesController = {};
 

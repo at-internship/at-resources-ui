@@ -95,7 +95,7 @@ adminCtrl.renderEditStoryForm = async(req, res) => {
 
     // Temporary code to retrive information about the course
     let responseStories = await atResourcesAPI.getAllStories();
-    storyDetails = responseStories.data.filter(function(c) { return c.id == storyId; });
+    const storyDetails = responseStories.data.filter(function(c) { return c.id == storyId; });
     console.log("One story found", storyDetails[0]);
     // ---
 

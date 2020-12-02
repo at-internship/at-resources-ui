@@ -124,8 +124,7 @@ describe("TEST: at-resources.service", () => {
                 expect(response).to.have.status(200);
 
                 // Response
-                expect(response).to.have.property("body");
-                expect(response.body).to.have.property("status");
+                expect(response.data.body).to.have.property("id");
             });
     });
 
@@ -137,8 +136,7 @@ describe("TEST: at-resources.service", () => {
                 expect(response).to.have.status(200);
 
                 // Response
-                expect(response).to.have.property("body");
-                expect(response.body).to.have.property("status");
+                expect(response.data.body).to.have.property("id");
             });
     });
 

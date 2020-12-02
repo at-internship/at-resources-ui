@@ -24,14 +24,14 @@ const atResourcesAPI = {};
 atResourcesAPI.getAllStories = () => {
     return axios
         .get(AT_RESOURCES_SERVICE_URI + `/v1/story`)
-        .then(res => res.data)
+        .then(res => res)
         .catch(error => console.log(error));
 };
 
 atResourcesAPI.getStoryById = (id) => {
     return axios
         .get(AT_RESOURCES_SERVICE_URI + `/v1/story`)
-        .then(res => res.data)
+        .then(res => res)
         .catch(error => console.log(error));
 }
 

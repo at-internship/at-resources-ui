@@ -10,7 +10,7 @@ at-resources app, one of the 3 projects of this internship program, which is in 
 
 GitHub - [https://github.com/at-internship/at-resources-ui](https://github.com/at-internship/at-resources-ui)
 
-Heroku - [https://at-resources-ui.herokuapp.com/dashboard] (https://at-resources-ui.herokuapp.com/dashboard)
+Heroku - [https://at-resources-ui.herokuapp.com/dashboard](https://at-resources-ui.herokuapp.com/dashboard)
 
 # Prerequesites
 

@@ -6,15 +6,11 @@ const path = require("path");
 const {
     dashboard,
     sprint,
-    renderAddSprintForm,
-    addSprint,
-    renderEditSprintForm,
-    updateSprint,
     backlog,
     mentors,
     metrics,
-    renderMembersList,
-    renderTeamList,
+    teams,
+    members
 } = require("../controllers/at-resources.controller");
 
 // Helpers
@@ -34,19 +30,6 @@ router.get("/dashboard", dashboard);
 // AT-RESOURCES - Render Sprint
 router.get("/sprint", sprint);
 
-// AT-RESOURCES - Render AddSprint
-router.get("/sprint/add", renderAddSprintForm);
-
-// AT-RESOURCES - AddSprint
-router.post("/sprint/add", addSprint);
-
-// AT-RESOURCES - Render editSprint
-router.get("/sprint/edit/:id", renderEditSprintForm);
-
-// AT-RESOURCES - Update sprint
-router.put("/sprint/edit/:id", updateSprint);
-
-
 //---------METRICS----------//
 
 // AT-RESOURCES - Render Metrics
@@ -65,11 +48,11 @@ router.get("/mentors", mentors);
 //-----------TEAMS-----------//
 
 // AT-RESOURCES - TEAMS
-router.get("/teams", renderTeamList);
+router.get("/teams", teams);
 
 //-----------MEMBERS-----------//
 
 // AT-RESOURCES - MEMBERS
-router.get("/members", renderMembersList);
+router.get("/members", members);
 
 module.exports = router;

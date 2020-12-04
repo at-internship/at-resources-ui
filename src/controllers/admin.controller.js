@@ -1,3 +1,14 @@
+/**
+ * AT RESOURCES UI - AT Admin Controller.
+ * Copyright 2020 AgileThought, Inc.
+ *
+ * General functions for at-admin-controller.
+ *
+ * @author @at-internship
+ * @version 1.0
+ */
+
+// AT Admin Controller
 const adminCtrl = {};
 
 // MICROSERVICE - HEROKU - SSO
@@ -9,15 +20,17 @@ adminCtrl.renderIndexAdmin = async(req, res) => {
     res.render("admin/index");
 };
 
+//-----------STORY-----------//
 // AT-RESOURCES - Admin - Story list
 adminCtrl.renderStoryList = async(req, res) => {
+    console.log("--> adminCtrl.renderStoryList");
     let stories = [];
+
     try {
         const responseStoryList = await atResourcesAPI.getAllStories();
         if (responseStoryList === null || responseStoryList === undefined) {
             req.flash("error_msg", "Service unavailable");
         } else {
-            console.log("--> adminCtrl.renderStoryList");
             stories = responseStoryList.data;
         }
     } catch (err) {
@@ -28,7 +41,8 @@ adminCtrl.renderStoryList = async(req, res) => {
 };
 
 // AT-RESOURCES - Admin - Render Add Story Form
-adminCtrl.renderAddStoryForm = (req, res) => {
+adminCtrl.renderAddStoryForm = async(req, res) => {
+    console.log("--> adminCtrl.renderAddStoryForm");
     res.render("admin/story/add-story");
 };
 
@@ -85,19 +99,14 @@ adminCtrl.addStory = async(req, res) => {
 // AT-RESOURCES - Admin - Render Edit Story Form
 adminCtrl.renderEditStoryForm = async(req, res) => {
     console.log("--> adminCtrl.renderEditStoryForm");
-    //res.render("admin/story/edit-story");
 
     let storyId = req.params.id;
     atResourcesAPI.getStoryById(storyId);
 
     // Temporary code to retrive information about the course
-
     let responseStories = await atResourcesAPI.getAllStories();
-
-    storyDetails = responseStories.data.filter(function(c) { return c.id == storyId; });
-
+    const storyDetails = responseStories.data.filter(function(c) { return c.id == storyId; });
     console.log("One story found", storyDetails[0]);
-
     // ---
 
     res.render("admin/story/edit-story", storyDetails[0]);
@@ -116,19 +125,6 @@ adminCtrl.updateStory = async(req, res) => {
         }
 
         // CONST
-        /*const {
-            priority,
-            name,
-            description,
-            aceptance_criteria,
-            story_points,
-            progress,
-            start_date,
-            due_date,
-            create_date,
-            status,
-        } = req.body;*/
-
         const {
             story_sprintId,
             story_userId,
@@ -246,5 +242,6 @@ adminCtrl.deleteStory = async(req, res) => {
     }
     res.redirect("/admin/story");
 };
+//-----------STORY-----------//
 
 module.exports = adminCtrl;

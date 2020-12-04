@@ -59,7 +59,7 @@ Heroku - [https://at-resources-ui.herokuapp.com/dashboard](https://at-resources-
 
 ## Contributor Team
 
-**"Fabian & Oscar - Jello submarine"**
+> "Fabian & Oscar - Jello submarine"
 
 | Mentor | Email |
 | --- | --- |

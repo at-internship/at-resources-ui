@@ -2,15 +2,15 @@
 
 at-resources-ui app, is one of the 3 projects of this internship program, which is in charge of managing stories and tasks, based on SCRUM methodology.
 
-## Getting Started
-
 <b>december, 2020</b>
 
 GitHub - [https://github.com/at-internship/at-resources-ui](https://github.com/at-internship/at-resources-ui)
 
 Heroku - [https://at-resources-ui.herokuapp.com/dashboard](https://at-resources-ui.herokuapp.com/dashboard)
 
-# Prerequesites
+## Getting Started
+
+### Prerequesites
 | Technology| URL |
 | --- | --- |
 | Node JS v 13.12 | [https://nodejs.org/es/download/current](https://nodejs.org/es/download/current) |
@@ -23,13 +23,13 @@ Heroku - [https://at-resources-ui.herokuapp.com/dashboard](https://at-resources-
 | Google Chrome JSON plugin | [https://chrome.google.com/webstore/detail/json-formatter](https://chrome.google.com/webstore/detail/json-formatter) |
 | Postman v 7.31.1 | [https://www.postman.com/downloads/](https://www.postman.com/downloads/) |
 
-## Plugins
+### Plugins
 
 - Integrated Terminal 
 - Prettier 
 - Material Icon Theme 
 
-# Built & Run
+## Built & Run
 - $ npm install
 - $ npm-check-updates -D
 - $ npm run dev
@@ -56,7 +56,7 @@ Heroku - [https://at-resources-ui.herokuapp.com/dashboard](https://at-resources-
 
 ## Contributor Team
 
-> "Fabian & Oscar - Jello submarine"
+> "Fabian & Oscar - Jello Submarine Team"
 
 | Mentor | Email |
 | --- | --- |
@@ -76,5 +76,5 @@ Heroku - [https://at-resources-ui.herokuapp.com/dashboard](https://at-resources-
 #### 4thSource© an AgileTought© Company
 
 
-# Acknowledgments
+## Acknowledgments
 Thanks to 4thSource© for letting us participate in this internship project, to the Mentors and the Architect for guiding us through it.

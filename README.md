@@ -60,12 +60,12 @@ $ npm run coverage
 
 | Fabian & Oscar - Jello submarine|
 | --- | 
-| Mentor| Email |
+| Mentor | Email |
 | --- | --- |
 | Adrian Fabian Sanchez Galicia | fabian.sanchez@agilethought.com - Project Data Access Read/Wrtite |
 | Oscar Adolfo Sanchez Rosas | oscar.sanchez@agilethought.com |
 
-| Interns-Devs|
+| Interns-Devs | Email |
 | --- | --- |
 | Erick Francisco Barreto Rocha |  erick.barreto@agilethought.com |
 | Maria Jose Yañez Sanchez | maria.yanez@agilethought.com |

@@ -14,6 +14,7 @@ Heroku - [https://at-resources-ui.herokuapp.com/dashboard](https://at-resources-
 
 # Prerequesites
 | Technology| URL |
+| --- | --- |
 | Node JS V 13.12 | [https://nodejs.org/es/download/current](https://nodejs.org/es/download/current) |
 | Mongo DB Community Server v 4.2.5 | [https://www.mongodb.com/download-center/community](https://www.mongodb.com/download-center/community) |
 | Visual Studio Code v 1.48 | [https://code.visualstudio.com/docs/?dv=win](https://code.visualstudio.com/docs/?dv=win) |
@@ -57,7 +58,8 @@ $ npm run coverage
 
 ## Contributor Team
 
-| -- Fabian & Oscar - Jello submarine -- |
+| Fabian & Oscar - Jello submarine|
+| --- | 
 | Mentor| Email |
 | --- | --- |
 | Adrian Fabian Sanchez Galicia | fabian.sanchez@agilethought.com - Project Data Access Read/Wrtite |

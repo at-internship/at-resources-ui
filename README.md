@@ -1,12 +1,10 @@
 # Node JS Project for AT Resources UI (Internal app)
 
-README file for AT-RESOURCES-UI
+at-resources-ui app, is one of the 3 projects of this internship program, which is in charge of managing stories and tasks, based on SCRUM methodology.
 
 ## Getting Started
 
-<b>December 2020</b>
-
-at-resources app, one of the 3 projects of this internship program, which is in charge of managing stories and tasks,based on scrum methodology. 
+<b>december, 2020</b>
 
 GitHub - [https://github.com/at-internship/at-resources-ui](https://github.com/at-internship/at-resources-ui)
 
@@ -15,15 +13,15 @@ Heroku - [https://at-resources-ui.herokuapp.com/dashboard](https://at-resources-
 # Prerequesites
 | Technology| URL |
 | --- | --- |
-| Node JS V 13.12 | [https://nodejs.org/es/download/current](https://nodejs.org/es/download/current) |
+| Node JS v 13.12 | [https://nodejs.org/es/download/current](https://nodejs.org/es/download/current) |
 | Mongo DB Community Server v 4.2.5 | [https://www.mongodb.com/download-center/community](https://www.mongodb.com/download-center/community) |
 | Visual Studio Code v 1.48 | [https://code.visualstudio.com/docs/?dv=win](https://code.visualstudio.com/docs/?dv=win) |
-| Bootstrap V 4.4 | [https://getbootstrap.com/docs/4.4/getting-started/download](https://getbootstrap.com/docs/4.4/getting-started/download) |
-| Express V 4.17.1 | [https://www.npmjs.com/package/express](https://www.npmjs.com/package/express) |
-| Handlebars V 4.5.0 | [https://handlebarsjs.com/installation/#npm-or-yarn-recommended](https://handlebarsjs.com/installation/#npm-or-yarn-recommended) |
+| Bootstrap v 4.4 | [https://getbootstrap.com/docs/4.4/getting-started/download](https://getbootstrap.com/docs/4.4/getting-started/download) |
+| Express v 4.17.1 | [https://www.npmjs.com/package/express](https://www.npmjs.com/package/express) |
+| Handlebars v 4.5.0 | [https://handlebarsjs.com/installation/#npm-or-yarn-recommended](https://handlebarsjs.com/installation/#npm-or-yarn-recommended) |
 | Heroku CLI | [https://devcenter.heroku.com/articles/heroku-cli](https://devcenter.heroku.com/articles/heroku-cli) |
 | Google Chrome JSON plugin | [https://chrome.google.com/webstore/detail/json-formatter](https://chrome.google.com/webstore/detail/json-formatter) |
-| Postman Used for API management v 7.31.1 | [https://www.postman.com/downloads/](https://www.postman.com/downloads/) |
+| Postman v 7.31.1 | [https://www.postman.com/downloads/](https://www.postman.com/downloads/) |
 
 ## Plugins
 
@@ -34,7 +32,6 @@ Heroku - [https://at-resources-ui.herokuapp.com/dashboard](https://at-resources-
 # Built & Run
 - $ npm install
 - $ npm-check-updates -D
-
 - $ npm run dev
 
 **Unit Test**
@@ -50,12 +47,12 @@ Heroku - [https://at-resources-ui.herokuapp.com/dashboard](https://at-resources-
 
 | Technology| Usage |
 | --- | --- |
-| Java Script | Programming Lenguague |
-| Handlebars | Programming Lenguague |
+| JavaScript | Programming Lenguague |
+| Handlebars | JavaScript Templates |
 | Mocha & Chai | Unit Testing |
 | MongoDB | NoSQL Database |
-| MongoCompass | Mongo GUI |
-| Heroku | Deploying Web App |
+| MongoCompass | MongoDB GUI |
+| Heroku | Platform as a service (PaaS) |
 
 ## Contributor Team
 
@@ -63,8 +60,8 @@ Heroku - [https://at-resources-ui.herokuapp.com/dashboard](https://at-resources-
 
 | Mentor | Email |
 | --- | --- |
-| Adrian Fabian Sanchez Galicia | fabian.sanchez@agilethought.com - Project Data Access Read/Wrtite |
-| Oscar Adolfo Sanchez Rosas | oscar.sanchez@agilethought.com |
+| Adrian Fabian Sánchez Galicia | fabian.sanchez@agilethought.com |
+| Oscar Adolfo Sánchez Rosas | oscar.sanchez@agilethought.com |
 
 | Interns-Devs | Email |
 | --- | --- |
@@ -76,8 +73,8 @@ Heroku - [https://at-resources-ui.herokuapp.com/dashboard](https://at-resources-
 
 ## Copyright / License
 
-#### 4thSource an AgileTought Company
+#### 4thSource© an AgileTought© Company
 
 
 # Acknowledgments
-Thanks to 4th Source for letting us participate in this internship project, to the Mentors and the Architect for guiding us through it.
+Thanks to 4thSource© for letting us participate in this internship project, to the Mentors and the Architect for guiding us through it.

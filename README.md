@@ -26,6 +26,7 @@ Heroku - [https://at-resources-ui.herokuapp.com/dashboard](https://at-resources-
 | Postman Used for API management v 7.31.1 | [https://www.postman.com/downloads/](https://www.postman.com/downloads/) |
 
 ## Plugins
+| --- |
 | Integrated Terminal |
 | Prettier |
 | Material Icon Theme |
@@ -58,8 +59,8 @@ $ npm run coverage
 
 ## Contributor Team
 
-| Fabian & Oscar - Jello submarine|
-| --- | 
+"Fabian & Oscar - Jello submarine"
+
 | Mentor | Email |
 | --- | --- |
 | Adrian Fabian Sanchez Galicia | fabian.sanchez@agilethought.com - Project Data Access Read/Wrtite |

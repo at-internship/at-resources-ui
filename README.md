@@ -26,25 +26,25 @@ Heroku - [https://at-resources-ui.herokuapp.com/dashboard](https://at-resources-
 | Postman Used for API management v 7.31.1 | [https://www.postman.com/downloads/](https://www.postman.com/downloads/) |
 
 ## Plugins
-| --- |
-| Integrated Terminal |
-| Prettier |
-| Material Icon Theme |
+
+- Integrated Terminal 
+- Prettier 
+- Material Icon Theme 
 
 # Built & Run
-$ npm install
-$ npm-check-updates -D
+- $ npm install
+- $ npm-check-updates -D
 
-$ npm run dev
+- $ npm run dev
 
-Unit Test
-$ npm install mocha --save-dev
-$ npm install chai --save-dev
-$ npm run test
+**Unit Test**
+- $ npm install mocha --save-dev
+- $ npm install chai --save-dev
+- $ npm run test
 
-Code Coverage
-$ npm install nock --save-dev
-$ npm run coverage
+**Code Coverage**
+- $ npm install nock --save-dev
+- $ npm run coverage
 
 ## Tools
 
@@ -59,7 +59,7 @@ $ npm run coverage
 
 ## Contributor Team
 
-"Fabian & Oscar - Jello submarine"
+**"Fabian & Oscar - Jello submarine"**
 
 | Mentor | Email |
 | --- | --- |

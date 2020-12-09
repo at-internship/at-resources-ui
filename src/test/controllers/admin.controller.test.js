@@ -53,9 +53,20 @@ describe("Admin Test Controller", function() {
     // AT-RESOURCES - Admin - Story list
     it("Should render admin story list view", function(done) {
         var res = { render: sinon.spy() };
-        var req = {};
-        var stories = [];
+        var req = { flash: sinon.spy() };
+        var stories = {};
         getAllStoriesStub.returns(Promise.resolve(stories));
+        var view = adminController.renderStoryList(req, res).then(function() {
+            expect(res.render.calledOnce).to.be.true;
+            done();
+        });
+    });
+
+    it("Should render admin story list view - error", function(done) {
+        var res = { render: sinon.spy() };
+        var req = { flash: sinon.spy() };
+        var stories = {};
+        getAllStoriesStub.returns(Promise.resolve());
         var view = adminController.renderStoryList(req, res).then(function() {
             expect(res.render.calledOnce).to.be.true;
             done();
@@ -65,11 +76,43 @@ describe("Admin Test Controller", function() {
     // AT-RESOURCES - Admin - Render Add Story Form
     it("Should render add story form", function(done) {
         var res = { render: sinon.spy() };
-        var req = {};
+        var req = { flash: sinon.spy() };
         var view = adminController.renderAddStoryForm(req, res).then(function() {
             expect(res.render.calledOnce).to.be.true;
             done();
         });
+    });
+
+    // AT-RESOURCES - Admin - Add Story
+    it("Should add story operation - error", function(done) {
+        this.timeout(5000);
+        var res = {
+            render: sinon.spy(),
+            redirect: sinon.spy()
+        };
+        var req = {
+            body: {
+                story_sprintId: null,
+                story_userId: null,
+                story_priority: null,
+                story_name: null,
+                story_description: null,
+                story_acceptanceCriteria: null,
+                story_storyPoints: null,
+                story_progress: null,
+                story_startDate: null,
+                story_dueDate: null,
+                story_status: null
+            },
+            flash: sinon.spy()
+        };
+        var err = { response: sinon.spy() };
+        var stories = [];
+        addStoryStub.returns(Promise.resolve(err));
+        var view = adminController.addStory(req, res).then(function() {
+            expect(res.redirect.calledOnce).to.be.true;
+            done();
+        }).catch(done);
     });
 
     // AT-RESOURCES - Admin - Add Story
@@ -79,7 +122,7 @@ describe("Admin Test Controller", function() {
             render: sinon.spy(),
             redirect: sinon.spy()
         };
-        var req = {};
+        var req = { flash: sinon.spy() };
         var stories = [];
         addStoryStub.returns(Promise.resolve(stories));
         var view = adminController.addStory(req, res).then(function() {
@@ -94,7 +137,7 @@ describe("Admin Test Controller", function() {
             render: sinon.spy(),
             redirect: sinon.spy()
         };
-        var req = {};
+        var req = { flash: sinon.spy() };
         var stories = [];
         addStoryStub.returns(Promise.resolve(stories));
         var view = adminController.addStory(req, res).then(function() {
@@ -107,14 +150,9 @@ describe("Admin Test Controller", function() {
     it("Should render edit story form", function(done) {
         this.timeout(5000);
         var res = { render: sinon.spy() };
-        var req = {
-            params: {
-                id: 1
-            }
-        };
-        var data = { id: 1 };
-        var stories = { data };
-        getStoryByIdStub.returns(Promise.resolve(stories));
+        var req = { params: { id: 0 }, flash: sinon.spy() };
+        var stories = { data: [] };
+        getAllStoriesStub.returns(Promise.resolve(stories));
         var view = adminController.renderEditStoryForm(req, res).then(function() {
             expect(res.render.calledOnce).to.be.true;
             done();
@@ -130,7 +168,8 @@ describe("Admin Test Controller", function() {
         var req = {
             params: {
                 id: null
-            }
+            },
+            flash: sinon.spy()
         };
         var view = adminController.updateStory(req, res).then(function() {
             expect(res.render.calledOnce).to.be.false;
@@ -159,7 +198,8 @@ describe("Admin Test Controller", function() {
                 story_startDate: null,
                 story_dueDate: null,
                 story_status: null
-            }
+            },
+            flash: sinon.spy()
         };
         var view = adminController.updateStory(req, res).then(function() {
             expect(res.render.calledOnce).to.be.false;
@@ -167,7 +207,7 @@ describe("Admin Test Controller", function() {
         }).catch(done);
     });
 
-    it("Should update story operation - false", function(done) {
+    it("Should update story operation - true", function(done) {
         var res = {
             render: sinon.spy(),
             redirect: sinon.spy()
@@ -175,12 +215,26 @@ describe("Admin Test Controller", function() {
         var req = {
             params: {
                 id: 1
-            }
+            },
+            body: {
+                story_sprintId: "1",
+                story_userId: "1",
+                story_priority: "High",
+                story_name: "Test",
+                story_description: "Test",
+                story_acceptanceCriteria: "Test",
+                story_storyPoints: "1",
+                story_progress: "0",
+                story_startDate: "2020-11-01",
+                story_dueDate: "2020-11-01",
+                story_status: "1"
+            },
+            flash: sinon.spy()
         };
         var stories = [];
         updateStoryStub.returns(Promise.resolve(stories));
         var view = adminController.updateStory(req, res).then(function() {
-            expect(res.render.calledOnce).to.be.false;
+            expect(res.redirect.calledOnce).to.be.true;
             done();
         }).catch(done);
     });
@@ -193,11 +247,12 @@ describe("Admin Test Controller", function() {
         };
         var req = {
             params: {
-                id: 1
-            }
+                id: null
+            },
+            flash: sinon.spy()
         };
         var stories = [];
-        deleteStoryStub.returns(Promise.resolve(stories));
+        deleteStoryStub.returns(Promise.resolve());
         var view = adminController.deleteStory(req, res).then(function() {
             expect(res.render.calledOnce).to.be.false;
             done();

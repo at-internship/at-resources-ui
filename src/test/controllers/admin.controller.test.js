@@ -62,14 +62,13 @@ describe("Admin Test Controller", function() {
         });
     });
 
-    it("Should render admin story list view - error", function(done) {
-        var res = { render: sinon.spy() };
-        var req = { flash: sinon.spy() };
+    it("Should render admin story list view - error", function() {
+        var res = {};
+        var req = {};
         var stories = {};
         getAllStoriesStub.returns(Promise.resolve());
         var view = adminController.renderStoryList(req, res).then(function() {
-            expect(res.render.calledOnce).to.be.true;
-            done();
+            expect(view.run()).to.throw();
         });
     });
 
@@ -144,6 +143,16 @@ describe("Admin Test Controller", function() {
             expect(res.render.calledOnce).to.be.false;
             done();
         }).catch(done);
+    });
+
+    it("Should add story operation - error", function() {
+        var res = {};
+        var req = {};
+        var stories = [];
+        addStoryStub.returns(Promise.resolve(stories));
+        var view = adminController.addStory(req, res).then(function() {
+            expect(view.run()).to.throw();
+        });
     });
 
     // AT-RESOURCES - Admin - Render Edit Story Form
@@ -257,5 +266,21 @@ describe("Admin Test Controller", function() {
             expect(res.render.calledOnce).to.be.false;
             done();
         }).catch(done);
+    });
+
+    it("Should delete story operation - error", function() {
+        var res = {};
+        var req = {
+            flash: sinon.spy()
+        };
+        var data = { message: "Error" };
+        var err = {
+            response: sinon.spy()
+        };
+        var stories = [];
+        deleteStoryStub.returns(Promise.resolve(err));
+        var view = adminController.deleteStory(req, res).then(function() {
+            expect(view.run()).to.throw();
+        });
     });
 });

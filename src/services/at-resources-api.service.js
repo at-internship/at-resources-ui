@@ -72,7 +72,7 @@ atResourcesAPI.deleteStory = (id) => {
         url: AT_RESOURCES_SERVICE_URI + `/v1/story/` + id,
         headers: {
             "content-type": "application/json",
-        },
+        }
     })
 };
 

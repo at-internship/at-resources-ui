@@ -32,12 +32,40 @@ describe("at-resources Test Controller", function() {
     // AT-RESOURCES - Index/Dashboard
     it("Should render dashboard section", function(done) {
         var res = { render: sinon.spy() };
-        var req = {};
+        var req = { flash: sinon.spy() };
         var stories = [];
         getAllStoriesStub.returns(Promise.resolve(stories));
         var view = atResourcesController.dashboard(req, res).then(function() {
             expect(res.render.calledOnce).to.be.true;
             done();
+        });
+    });
+
+    it("Should render dashboard section - Service unavailable", function() {
+        var res = {};
+        var req = { flash: sinon.spy() };
+        var stories = [];
+        var err = {
+            response: sinon.spy()
+        };
+        getAllStoriesStub.returns(Promise.resolve(null));
+        var view = atResourcesController.dashboard(req, res).then(function() {
+            expect(view.run()).to.throw();
+        });
+    });
+
+    it("Should render dashboard section - error", function() {
+        var res = {};
+        var req = { flash: sinon.spy() };
+        var stories = [];
+        var err = {
+            response: sinon.spy(),
+            message: sinon.spy()
+        };
+        getAllStoriesStub.returns(Promise.resolve(err));
+        var view = atResourcesController.dashboard(err).then(function() {
+            expect(view.run()).to.throw();
+            //expect(err.message).to.equals("Undefinded");
         });
     });
 
@@ -60,6 +88,19 @@ describe("at-resources Test Controller", function() {
         var view = atResourcesController.sprint(req, res).then(function() {
             expect(res.render.calledOnce).to.be.true;
             done();
+        });
+    });
+
+    it("Should render sprint section - Service unavailable", function() {
+        var res = {};
+        var req = { flash: sinon.spy() };
+        var stories = [];
+        var err = {
+            response: sinon.spy()
+        };
+        getAllStoriesStub.returns(Promise.resolve(null));
+        var view = atResourcesController.sprint(req, res).then(function() {
+            expect(view.run()).to.throw();
         });
     });
 
